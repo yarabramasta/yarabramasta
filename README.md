@@ -9,7 +9,7 @@
 <br/>
 <br/>
 
-<p align="center">🌱 I’m currently learning <b>Flutter, Node JS, Frontend App Design</b></p>
+<p align="center">🌱 I’m currently learning <b>Flutter, Node JS, and React JS</b></p>
 
 <br/>
 <br/>

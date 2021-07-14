@@ -9,6 +9,7 @@ name: Deploy on Push
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    name: deploy
     steps:
       - name: checkout
         uses: actions/checkout@v2

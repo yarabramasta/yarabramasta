@@ -5,20 +5,22 @@ on:
     branches:
       - dev
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 15.x
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install dependencies
+      - name: install dependencies
         run: npm ci
-      - name: Build app
+      - name: listing dependencies
+        run: npm list
+      - name: build app
         run: npm run build
-      - name: Semantic release
+      - name: release
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

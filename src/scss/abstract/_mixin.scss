@@ -1,0 +1,20 @@
+@mixin fl-wrap($opt) {
+  @if $opt == column {
+    flex-flow: column wrap;
+  }
+  @if $opt == row {
+    flex-flow: row wrap;
+  }
+}
+
+@mixin d-flex($align, $content, $flow) {
+  display: flex;
+  align-items: $align;
+  justify-content: $content;
+  @if $flow == column {
+    @include fl-wrap(column);
+  }
+  @if $flow == row {
+    @include fl-wrap(row);
+  }
+}

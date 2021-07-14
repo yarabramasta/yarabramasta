@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "plugins": [
     "@semantic-release/commit-analyzer",
@@ -11,7 +11,11 @@
     "@semantic-release/git"
   ],
   "release": {
-    "branches": ["master", "dev", "release"],
+    "branches": [
+      "master",
+      "dev",
+      "release"
+    ],
     "prepare": [
       "@semantic-release/changelog",
       "@semantic-release/npm",

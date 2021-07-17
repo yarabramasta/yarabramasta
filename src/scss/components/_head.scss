@@ -23,7 +23,6 @@
 
           .stgr {
             font-size: 20px;
-            color: $white;
           }
         }
       }
@@ -41,15 +40,15 @@
         width: 2px;
         height: 20px;
         margin: 0 3px;
+        opacity: 1;
         cursor: pointer;
-        background-color: $white;
 
         &:hover {
           @include ease-quart("inOut", 0.4s);
 
           width: 20px;
-          border: 2px solid $white;
-          background-color: $black;
+          border: 2px solid;
+          background: transparent !important;
         }
 
         &--active {
@@ -59,7 +58,6 @@
 
           &:hover {
             width: 40px;
-            background-color: $white;
           }
         }
       }

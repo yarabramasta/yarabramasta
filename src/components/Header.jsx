@@ -22,6 +22,37 @@ function Header() {
   );
 }
 
+// [component]: logo
+function Logo() {
+  const { setSection, setActive } = useContext(GlobalContext);
+
+  return (
+    <div className="c__left">
+      <Link
+        to="/"
+        onClick={() => {
+          setSection({
+            current: 'home',
+            title: 'HOME',
+          });
+          setActive('c-1');
+        }}
+      >
+        <h3 className="t__logo">
+          <span className="stgr">B</span>
+          <span className="stgr">R</span>
+          <span className="stgr">A</span>
+          <span className="stgr">M</span>
+          <span className="stgr">A</span>
+          <span className="stgr">S</span>
+          <span className="stgr">T</span>
+          <span className="stgr">A</span>
+        </h3>
+      </Link>
+    </div>
+  );
+}
+
 // [component]: indicator
 function Indicator() {
   const { active, setActive, setSection } = useContext(GlobalContext);
@@ -40,7 +71,7 @@ function Indicator() {
     },
   ];
 
-  const changeState = (index) => {
+  const changeTheme = (index) => {
     if (index === 0) {
       setSection({
         current: 'home',
@@ -72,7 +103,7 @@ function Indicator() {
   };
 
   return (
-    <div className="c__center">
+    <div className="c__center c__wrapper">
       {
         lines.map(({ className }, i) => (
           <span
@@ -82,42 +113,12 @@ function Indicator() {
             onClick={
                 (evt) => {
                   evt.preventDefault();
-                  changeState(i);
+                  changeTheme(i);
                 }
               }
           />
         ))
       }
-    </div>
-  );
-}
-
-function Logo() {
-  const { setSection, setActive } = useContext(GlobalContext);
-
-  return (
-    <div className="c__left">
-      <Link
-        to="/"
-        onClick={() => {
-          setSection({
-            current: 'home',
-            title: 'HOME',
-          });
-          setActive('c-1');
-        }}
-      >
-        <h3 className="t__logo">
-          <span className="stgr">B</span>
-          <span className="stgr">R</span>
-          <span className="stgr">A</span>
-          <span className="stgr">M</span>
-          <span className="stgr">A</span>
-          <span className="stgr">S</span>
-          <span className="stgr">T</span>
-          <span className="stgr">A</span>
-        </h3>
-      </Link>
     </div>
   );
 }

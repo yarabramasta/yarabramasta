@@ -14,7 +14,8 @@ body {
   font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #010101;
+  background: $black;
+  color: $white;
 }
 
 ul,
@@ -46,6 +47,7 @@ h3 {
 
 a {
   text-decoration: none;
+  color: $white;
 }
 
 span {

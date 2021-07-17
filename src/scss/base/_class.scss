@@ -5,3 +5,8 @@
 .fl-h {
   @include d-flex(center, null, row);
 }
+
+.text {
+  text-transform: uppercase;
+  color: $white;
+}

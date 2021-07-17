@@ -15,10 +15,10 @@ function Background() {
     if (section.current === 'home') {
       tl.to('body', {
         duration: 0,
-        color: '#fbfbfb',
+        color: '#d5d5d5',
       }).to('.theme-bg', {
         duration: 0,
-        backgroundColor: '#010101',
+        backgroundColor: '#0d0d0d',
       }, '-=0.1');
     }
   }, [section]);

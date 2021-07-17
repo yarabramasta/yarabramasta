@@ -7,7 +7,12 @@ function Footer() {
 
   return (
     <div className="footer fl-h">
-      <div className="c__left">left</div>
+      <div className="c__left">
+        <p className="text">
+          <span>Web designer and</span>
+          <span>fullstack developer</span>
+        </p>
+      </div>
       {
         section.current === 'home' ? null
           : (
@@ -21,7 +26,28 @@ function Footer() {
             </div>
           )
       }
-      <div className="c__right">right</div>
+      <div className="c__right">
+        <p className="text">
+          <span className="lk__socmed">
+            <a
+              href="mailto:bram.asta.yara111@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Email
+            </a>
+          </span>
+          <span className="lk__socmed">
+            <a
+              href="https://www.instagram.com/_bram111/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
+          </span>
+        </p>
+      </div>
     </div>
   );
 }

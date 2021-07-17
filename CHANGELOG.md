@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/yarabramasta/yarabramasta/compare/v1.0.0...v2.0.0) (2021-07-17)
+
+
+### Features
+
+* **theme:** change theme ([52c67a4](https://github.com/yarabramasta/yarabramasta/commit/52c67a46a349bff81458ee23389cec7e96843ee1))
+
+
+### BREAKING CHANGES
+
+* **theme:** change all color & background on scss files to gsap animation. add new folder
+
 # 1.0.0 (2021-07-14)
 
 

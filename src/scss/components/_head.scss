@@ -16,23 +16,74 @@
     &left {
       margin-left: 0;
 
-      .t__logo {
-        font-size: 20px;
+      a {
+        .t__logo {
+          @include d-flex(flex-start, center, row);
+          cursor: pointer;
+
+          .stgr {
+            font-size: 20px;
+            color: $white;
+          }
+        }
       }
     }
 
     &center {
+      @include d-flex(center, space-around, row);
+
+      margin: 0;
+      width: fit-content;
+
       .sh-v {
+        @include ease-quart("inOut", 0.4s);
+
+        width: 2px;
+        height: 20px;
+        margin: 0 3px;
+        cursor: pointer;
+        background-color: $white;
+
+        &:hover {
+          @include ease-quart("inOut", 0.4s);
+
+          width: 20px;
+          border: 2px solid $white;
+          background-color: $black;
+        }
+
+        &--active {
+          @include ease-quart("inOut", 0.4s);
+
+          width: 40px;
+
+          &:hover {
+            width: 40px;
+            background-color: $white;
+          }
+        }
       }
     }
 
     &right {
+      width: fit-content;
       margin-right: 0;
 
       .current {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
         .text {
+          pointer-events: none;
         }
+
         .sh-h {
+          position: absolute;
+          bottom: -1px;
+          width: 100%;
+          height: 2px;
+          background-color: $white;
         }
       }
     }

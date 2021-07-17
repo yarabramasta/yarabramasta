@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 
+import { Switch, Route } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 import { GlobalProvider } from './context/GlobalContext';
@@ -29,7 +30,14 @@ function App() {
         <>
           <Background />
           <Header />
-          <HomePage />
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route exact path="/about" />
+            <Route exact path="/timeline" />
+            <Route exact path="/skill" />
+          </Switch>
           <Footer />
         </>
       </GlobalProvider>

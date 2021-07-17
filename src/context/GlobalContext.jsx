@@ -8,10 +8,13 @@ function GlobalProvider({ children }) {
     current: '',
     title: '',
   });
+  const [active, setActive] = useState('');
 
   const values = {
     section,
+    active,
     setSection,
+    setActive,
   };
 
   return (

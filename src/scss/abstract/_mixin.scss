@@ -19,14 +19,14 @@
   }
 }
 
-@mixin ease-quart($type, $d) {
+@mixin ease-quart($elem, $type, $d) {
   @if $type == "out" {
-    transition: $d cubic-bezier(0.25, 1, 0.5, 1);
+    transition: $elem $d cubic-bezier(0.25, 1, 0.5, 1);
   }
   @if $type == "in" {
-    transition: $d cubic-bezier(0.5, 0, 0.75, 0);
+    transition: $elem $d cubic-bezier(0.5, 0, 0.75, 0);
   }
   @if $type == "inOut" {
-    transition: $d cubic-bezier(0.76, 0, 0.24, 1);
+    transition: $elem $d cubic-bezier(0.76, 0, 0.24, 1);
   }
 }

@@ -3,50 +3,61 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 
 function Footer() {
-  const { section } = useContext(GlobalContext);
+  const { current } = useContext(GlobalContext);
 
   return (
     <div className="footer fl-h">
       <div className="c__left">
-        <p className="text">
-          <span>Web designer and</span>
-          <span>fullstack developer</span>
+        <p className="text fc">
+          <div className="wf">
+            <span>Web designer and</span>
+          </div>
+          <div className="wf">
+            <span>fullstack developer</span>
+          </div>
         </p>
       </div>
       {
-        section.current === 'home' ? null
-          : (
-            <div className="c__center">
-              <div className="explore">
-                <div className="t__wrap">
-                  <span className="text">EXPLORE</span>
-                  <span className="sh-h" />
-                </div>
+        current.home === false ? (
+          <div className="c__center">
+            <div className="explore">
+              <div className="t__wrap">
+                <span className="text">EXPLORE</span>
+                <span className="sh-h sh" />
               </div>
             </div>
-          )
+          </div>
+        ) : null
       }
       <div className="c__right">
-        <p className="text">
-          <span className="lk__socmed">
-            <a
-              href="mailto:bram.asta.yara111@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Email
-            </a>
-          </span>
-          <span className="lk__socmed">
-            <a
-              href="https://www.instagram.com/_bram111/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram
-            </a>
-          </span>
-        </p>
+        <div className="socmed">
+          <div className="wf">
+            <span className="lk__socmed">
+              <a
+                href="mailto:bram.asta.yara111@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                className="text"
+              >
+                Email
+              </a>
+              <span className="sh-h sh" />
+            </span>
+          </div>
+          <div className="wf">
+            <span className="lk__socmed">
+              <a
+                href="https://www.instagram.com/_bram111/"
+                target="_blank"
+                rel="noreferrer"
+                className="text"
+              >
+                Instagram
+              </a>
+              <span className="sh-h sh" />
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

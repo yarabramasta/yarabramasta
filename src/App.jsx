@@ -1,27 +1,16 @@
 import React, { useEffect } from 'react';
 
-import { Switch, Route } from 'react-router-dom';
-import { gsap } from 'gsap';
-
 import { GlobalProvider } from './context/GlobalContext';
 import Background from './components/ThemeBg';
 import Header from './components/Header';
-import HomePage from './pages/Home';
+import MainContent from './pages/Main';
 import Footer from './components/Footer';
 
-const tl = gsap.timeline({
-  smoothChildTiming: true,
-});
+import { animatedStart } from './animation/start';
 
 function App() {
   useEffect(() => {
-    tl.to('.app', {
-      delay: 0,
-      duration: 0,
-      css: {
-        visibility: 'visible',
-      },
-    });
+    animatedStart();
   }, []);
 
   return (
@@ -30,14 +19,7 @@ function App() {
         <>
           <Background />
           <Header />
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/about" />
-            <Route exact path="/timeline" />
-            <Route exact path="/skill" />
-          </Switch>
+          <MainContent />
           <Footer />
         </>
       </GlobalProvider>

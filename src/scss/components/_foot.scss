@@ -1,21 +1,26 @@
 .footer {
-  @include d-flex(flex-end, space-between, row);
-
   position: relative;
   bottom: 0;
   width: 100%;
   padding: 40px;
+  justify-content: center;
+  z-index: 2;
 
   .c__ {
     &left,
     &center,
     &right {
-      margin: 0 40px;
+      position: absolute;
+      margin: 40px;
     }
 
     &left {
-      margin-left: 0;
+      left: 0;
       pointer-events: none;
+
+      .wf {
+        overflow: hidden;
+      }
     }
 
     &center {
@@ -30,43 +35,42 @@
           bottom: -0.5px;
           width: 100%;
           height: 2px;
-          background-color: $white;
         }
       }
     }
 
     &right {
-      margin-right: 0;
+      right: 0;
 
-      .text {
+      .wf {
         @include d-flex(flex-end, center, column);
 
+        position: relative;
+        overflow: hidden;
+
         .lk__socmed {
-          position: relative;
           width: fit-content;
-          overflow: hidden;
           cursor: pointer;
 
           a {
             width: 100%;
             text-align: right;
-
-            &::before {
-              @include ease-quart("in", 0.6s);
-
-              content: "";
-              position: absolute;
-              left: 0;
-              bottom: 0;
-              width: 0;
-              height: 1.5px;
-              background-color: $white;
-              transition-delay: -100ms;
-            }
           }
 
-          &:hover a::before {
-            @include ease-quart("out", 0.6s);
+          .sh-h {
+            @include ease-quart(all, "in", 0.6s);
+
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1.5px;
+            transition-delay: -100ms;
+          }
+
+          &:hover .sh-h {
+            @include ease-quart(all, "out", 0.6s);
 
             width: 100%;
             left: auto;

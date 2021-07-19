@@ -3,26 +3,34 @@
   top: 0;
   width: 100%;
   padding: 40px;
-  justify-content: space-between;
+  justify-content: center;
   z-index: 2;
 
   .c__ {
     &left,
     &center,
     &right {
-      margin: 0 40px;
+      position: absolute;
+      margin: 40px;
     }
 
     &left {
-      margin-left: 0;
+      left: 0;
 
       a {
         .t__logo {
           @include d-flex(flex-start, center, row);
+
           cursor: pointer;
 
-          .stgr {
-            font-size: 20px;
+          .wrap {
+            width: fit-content;
+            overflow: hidden;
+
+            .stgr {
+              font-size: 20px;
+              font-weight: 600;
+            }
           }
         }
       }
@@ -31,29 +39,26 @@
     &center {
       @include d-flex(center, space-around, row);
 
-      margin: 0;
       width: fit-content;
 
       .sh-v {
-        @include ease-quart("inOut", 0.4s);
+        @include ease-quart(all, "out", 0.6s);
 
         width: 2px;
         height: 20px;
         margin: 0 3px;
-        opacity: 1;
+        opacity: 0;
         cursor: pointer;
 
         &:hover {
-          @include ease-quart("inOut", 0.4s);
+          @include ease-quart(all, "out", 0.6s);
 
           width: 20px;
           border: 2px solid;
-          background: transparent !important;
+          background-color: transparent !important;
         }
 
         &--active {
-          @include ease-quart("inOut", 0.4s);
-
           width: 40px;
 
           &:hover {
@@ -65,23 +70,26 @@
 
     &right {
       width: fit-content;
-      margin-right: 0;
+      right: 0;
+      pointer-events: none;
 
       .current {
-        position: relative;
         width: 100%;
         overflow: hidden;
 
-        .text {
-          pointer-events: none;
-        }
+        .w-cr {
+          position: relative;
 
-        .sh-h {
-          position: absolute;
-          bottom: -1px;
-          width: 100%;
-          height: 2px;
-          background-color: $white;
+          .text {
+            pointer-events: none;
+          }
+
+          .sh-h {
+            position: absolute;
+            bottom: -1px;
+            width: 100%;
+            height: 2px;
+          }
         }
       }
     }

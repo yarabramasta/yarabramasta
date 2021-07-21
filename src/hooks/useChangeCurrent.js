@@ -1,12 +1,15 @@
 /* eslint-disable import/prefer-default-export */
 import { useContext } from 'react';
 
+import { useHistory } from 'react-router-dom';
+
 import { useChangeTheme } from './useChangeTheme';
 
 import { GlobalContext } from '../context/GlobalContext';
 
 function useChangeCurrent() {
-  const { setCurrent, setTitle } = useContext(GlobalContext);
+  const { setCurrent } = useContext(GlobalContext);
+  const history = useHistory();
   const theme = useChangeTheme();
 
   const setHome = () => {
@@ -18,9 +21,10 @@ function useChangeCurrent() {
       skill: false,
       primary: '#0d0d0d',
       accent: '#d5d5d5',
+      path: '/',
     });
-    setTitle('HOME');
     theme();
+    history.push('/');
   };
   const setAbout = () => {
     setCurrent({
@@ -31,8 +35,8 @@ function useChangeCurrent() {
       skill: false,
       primary: '#d5d5d5',
       accent: '#0d0d0d',
+      path: '/about',
     });
-    setTitle('ABOUT');
     theme();
   };
   const setTl = () => {
@@ -44,8 +48,8 @@ function useChangeCurrent() {
       skill: false,
       primary: '#312e34',
       accent: '#e28468',
+      path: '/timeline',
     });
-    setTitle('TIMELINE');
     theme();
   };
   const setSkill = () => {
@@ -57,8 +61,8 @@ function useChangeCurrent() {
       skill: true,
       primary: '#b09f99',
       accent: '#292826',
+      path: '/skill',
     });
-    setTitle('SKILLS');
     theme();
   };
 

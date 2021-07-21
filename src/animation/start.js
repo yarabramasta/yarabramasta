@@ -36,36 +36,24 @@ function animatedStart() {
       duration: 2,
       ease: 'expo.Out',
       y: 80,
-      skewY: '20deg',
+      skewY: '-20deg',
       stagger: {
         amount: 0.4,
-        from: 'end',
+        from: 'start',
         axis: 'y',
       },
     }, '-=2')
-    .from('.w-cr', {
-      duration: 2,
-      ease: 'expo.Out',
-      y: 80,
-      skewY: '-20deg',
-    }, '-=2')
-    .from('.w-cr .sh', {
-      delay: 0.2,
-      duration: 0.5,
-      ease: 'expo.Out',
-      opacity: 0,
-    })
     .to(['.c-1', '.c-2', '.c-3', '.c-4'], {
-      delay: 0.2,
+      delay: 0.3,
       duration: 1,
-      ease: 'circ.Out',
+      ease: 'expo.Out',
       opacity: 1,
       stagger: {
         amount: 0.4,
         from: 'start',
         axis: 'x',
       },
-    }, '-=0.7');
+    }, '-=1');
 }
 
 export {

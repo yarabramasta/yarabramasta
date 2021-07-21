@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 const GlobalContext = createContext();
 
 function GlobalProvider({ children }) {
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState({
+    text: '',
+  });
   const [current, setCurrent] = useState({
     isInitial: true,
     home: false,
     about: false,
     timeline: false,
     skill: false,
+    path: '/',
     primary: '#0d0d0d',
     accent: '#d5d5d5',
   });

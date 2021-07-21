@@ -14,19 +14,19 @@ function useChangeTheme() {
   const theme = () => {
     tl.to('body, .text, .theme-bg, a', {
       duration: 0.5,
-      ease: 'power3.out',
+      ease: 'expo.out',
       backgroundColor: current.primary,
       color: current.accent,
     }).to('.sh', {
       duration: 0.5,
       ease: 'expo.out',
       backgroundColor: current.accent,
-    }, '-=0.7');
+    }, '-=0.5');
   };
 
   useEffect(() => {
     theme();
-  });
+  }, [current]);
 
   return theme;
 }

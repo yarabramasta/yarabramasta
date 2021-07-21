@@ -8,23 +8,44 @@ import { GlobalContext } from '../context/GlobalContext';
 
 // main
 function Header() {
-  const { current, title } = useContext(GlobalContext);
+  const { current } = useContext(GlobalContext);
   const [setHome] = useChangeCurrent();
   useEffect(() => {
     if (current.isInitial === true) {
       setHome();
     }
-  }, [current, title]);
+  }, [current]);
 
   return (
     <div className="header fl-h">
       <Logo />
-      <Indicator />
       <div className="c__right">
-        <div className="current cr-hd">
-          <div className="w-cr">
-            <span className="text">{title}</span>
-            <span className="sh-h sh" />
+        <div className="socmed">
+          <div className="wf">
+            <span className="lk__socmed">
+              <a
+                href="https://www.instagram.com/_bram111/"
+                target="_blank"
+                rel="noreferrer"
+                className="text"
+              >
+                Instagram
+              </a>
+              <span className="sh-h sh" />
+            </span>
+          </div>
+          <div className="wf">
+            <span className="lk__socmed">
+              <a
+                href="mailto:bram.asta.yara111@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                className="text"
+              >
+                Email
+              </a>
+              <span className="sh-h sh" />
+            </span>
           </div>
         </div>
       </div>
@@ -66,42 +87,10 @@ function Logo() {
             <span className="stgr text">T</span>
           </span>
           <span className="wrap">
-
             <span className="stgr text">A</span>
           </span>
         </h3>
       </Link>
-    </div>
-  );
-}
-
-// [component]: indicator
-function Indicator() {
-  const { current } = useContext(GlobalContext);
-  const [setHome, setAbout, setTl, setSkill] = useChangeCurrent();
-
-  return (
-    <div className="c__center c__wrapper">
-      <span
-        className={current.home === true ? 'sh-v sh c-1 sh-v--active' : 'sh-v sh c-1'}
-        role="presentation"
-        onClick={setHome}
-      />
-      <span
-        className={current.about === true ? 'sh-v sh c-2 sh-v--active' : 'sh-v sh c-2'}
-        role="presentation"
-        onClick={setAbout}
-      />
-      <span
-        className={current.timeline === true ? 'sh-v sh c-3 sh-v--active' : 'sh-v sh c-3'}
-        role="presentation"
-        onClick={setTl}
-      />
-      <span
-        className={current.skill === true ? 'sh-v sh c-4 sh-v--active' : 'sh-v sh c-4'}
-        role="presentation"
-        onClick={setSkill}
-      />
     </div>
   );
 }

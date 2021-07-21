@@ -15,20 +15,82 @@
     }
 
     &left {
-      left: 0;
-      pointer-events: none;
+      @include d-flex(center, space-around, row);
 
-      .wf {
-        overflow: hidden;
+      width: fit-content;
+      left: 0;
+
+      &.c__wrapper {
+        text-align: left;
+
+        .sh {
+          opacity: 0;
+        }
+      }
+
+      .sh-v {
+        @include ease-quart(all, "out", 0.6s);
+
+        width: 2px;
+        height: 20px;
+        margin: 0 3px;
+        opacity: 0;
+        cursor: pointer;
+
+        &:hover {
+          @include ease-quart(all, "out", 0.6s);
+
+          width: 20px;
+          border: 2px solid;
+          background-color: transparent !important;
+        }
+
+        &--active {
+          width: 40px;
+
+          &:hover {
+            width: 40px;
+          }
+        }
       }
     }
 
     &center {
       .t__wrap {
         position: relative;
-        width: fit-content;
+        width: 100%;
         overflow: hidden;
-        text-align: center;
+
+        &--a {
+          @include ease-quart(all, "inOut", 700ms);
+
+          width: 100%;
+          text-align: center;
+
+          &-enter {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(80px);
+
+            &-active {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0px);
+            }
+          }
+
+          &-exit {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0px);
+
+            &-active {
+              opacity: 0;
+              visibility: hidden;
+              transform: translateY(-80px);
+            }
+          }
+        }
 
         .sh-h {
           position: absolute;
@@ -41,41 +103,13 @@
 
     &right {
       right: 0;
+      pointer-events: none;
 
-      .wf {
-        @include d-flex(flex-end, center, column);
+      .fc {
+        text-align: right;
 
-        position: relative;
-        overflow: hidden;
-
-        .lk__socmed {
-          width: fit-content;
-          cursor: pointer;
-
-          a {
-            width: 100%;
-            text-align: right;
-          }
-
-          .sh-h {
-            @include ease-quart(all, "in", 0.6s);
-
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 1.5px;
-            transition-delay: -100ms;
-          }
-
-          &:hover .sh-h {
-            @include ease-quart(all, "out", 0.6s);
-
-            width: 100%;
-            left: auto;
-            right: 0;
-          }
+        .wf {
+          overflow: hidden;
         }
       }
     }

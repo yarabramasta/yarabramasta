@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/yarabramasta/yarabramasta/compare/v2.0.0...v3.0.0) (2021-07-19)
+
+
+### Code Refactoring
+
+* **main:** improve performance ([5fb2499](https://github.com/yarabramasta/yarabramasta/commit/5fb24990f23ab2b83ac4c70bfc3b620475762c2b))
+
+
+### BREAKING CHANGES
+
+* **main:** folder structure, custom hooks, element structure.
+
 # [2.0.0](https://github.com/yarabramasta/yarabramasta/compare/v1.0.0...v2.0.0) (2021-07-17)
 
 

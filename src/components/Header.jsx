@@ -1,9 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-
 import { Link } from 'react-router-dom';
-
 import { useChangeCurrent } from '../hooks/useChangeCurrent';
-
 import { GlobalContext } from '../context/GlobalContext';
 
 // main

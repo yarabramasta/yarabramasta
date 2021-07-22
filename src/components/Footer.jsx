@@ -1,11 +1,9 @@
-import React, { useContext } from 'react';
-
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
-
 import { useChangeCurrent } from '../hooks/useChangeCurrent';
-
 import { GlobalContext } from '../context/GlobalContext';
+import { ReactComponent as ExploreIcon } from '../assets/icons/ep.svg';
+import { hideIcon } from '../animation/epIcon';
 
 function Footer() {
   const { current } = useContext(GlobalContext);
@@ -16,21 +14,12 @@ function Footer() {
       <div className="c__center">
         <div className="explore">
           <div className="t__wrap">
-            <CSSTransition
-              in={current.home === false}
-              key={current.backgroundColor}
-              timeout={1000}
-              classNames="t__wrap--a"
-              unmountOnExit
-            >
-              <span className="t__wrap--a">
-                <Link to={current.path}>
-                  <span className="text">EXPLORE</span>
-                  <span className="sh-h sh" />
-                </Link>
-              </span>
-            </CSSTransition>
+            <Link to={current.path}>
+              <span className="text">EXPLORE</span>
+              <span className="sh-h sh" />
+            </Link>
           </div>
+          <SvgIcon />
         </div>
       </div>
       <div className="c__right">
@@ -74,6 +63,29 @@ function Indicator() {
         role="presentation"
         onClick={setSkill}
       />
+    </div>
+  );
+}
+
+function SvgIcon() {
+  const { current } = useContext(GlobalContext);
+
+  useEffect(() => {
+    if (current.isInitial === true) {
+      hideIcon();
+    }
+  }, [current]);
+
+  return (
+    <div className="svg-icon">
+      <Link to={current.path}>
+        <span className="ep-i">
+          <span className="ln-v" />
+          <div className="i-kit">
+            <ExploreIcon />
+          </div>
+        </span>
+      </Link>
     </div>
   );
 }

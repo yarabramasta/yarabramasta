@@ -1,0 +1,32 @@
+.svg-icon {
+  width: 40px;
+  height: fit-content;
+  padding: 0;
+
+  .ep-i {
+    @include d-flex(center, center, column);
+
+    .ln-v {
+      width: 2px;
+      height: 50px;
+      margin: 20px 0 10px;
+    }
+
+    .i-kit {
+      @include d-flex(center, center, row);
+
+      width: 10px;
+      height: 10px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        .svg-pl,
+        .svg-x {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,12 @@ const tl = gsap.timeline({
 });
 
 function animatedStart() {
+  tl.to('.t__wrap, .ep-i .ln-v, .ep-i .i-kit svg', {
+    delay: 0,
+    duration: 0,
+    opacity: 0,
+    visibility: 'hidden',
+  });
   tl.to('.app', {
     delay: 0,
     duration: 0,

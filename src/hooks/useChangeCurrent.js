@@ -1,11 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 import { useContext } from 'react';
-
 import { useHistory } from 'react-router-dom';
-
 import { useChangeTheme } from './useChangeTheme';
-
 import { GlobalContext } from '../context/GlobalContext';
+import { animatedExploreIcon, exitAnimation } from '../animation/epIcon';
 
 function useChangeCurrent() {
   const { setCurrent } = useContext(GlobalContext);
@@ -24,6 +22,7 @@ function useChangeCurrent() {
       path: '/',
     });
     theme();
+    exitAnimation();
     history.push('/');
   };
   const setAbout = () => {
@@ -37,6 +36,7 @@ function useChangeCurrent() {
       accent: '#0d0d0d',
       path: '/about',
     });
+    animatedExploreIcon();
     theme();
   };
   const setTl = () => {
@@ -50,6 +50,7 @@ function useChangeCurrent() {
       accent: '#e28468',
       path: '/timeline',
     });
+    animatedExploreIcon();
     theme();
   };
   const setSkill = () => {
@@ -63,6 +64,7 @@ function useChangeCurrent() {
       accent: '#292826',
       path: '/skill',
     });
+    animatedExploreIcon();
     theme();
   };
 

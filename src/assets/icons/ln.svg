@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2" height="40" viewBox="0 0 2 40">
+  <path
+    id="svg"
+    class="ln-v"
+    d="M.5,40h-1V0h1Z"
+    transform="translate(0.5)"
+    fill="#0d0d0d"
+  />
+</svg>

@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/yarabramasta/yarabramasta/compare/v3.0.0...v3.0.1) (2021-07-22)
+
+
+### Bug Fixes
+
+* **header-footer:** change position order of component ([7c9f396](https://github.com/yarabramasta/yarabramasta/commit/7c9f3962f1ec7584a635db02793d3844ab34cf48))
+
 # [3.0.0](https://github.com/yarabramasta/yarabramasta/compare/v2.0.0...v3.0.0) (2021-07-19)
 
 

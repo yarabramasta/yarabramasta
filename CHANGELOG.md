@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/yarabramasta/yarabramasta/compare/v3.0.1...v3.1.0) (2021-07-23)
+
+
+### Features
+
+* **main:** add menu image ([18ba551](https://github.com/yarabramasta/yarabramasta/commit/18ba55115760b5531f4f3035eb1af08c6681c66a))
+
 ## [3.0.1](https://github.com/yarabramasta/yarabramasta/compare/v3.0.0...v3.0.1) (2021-07-22)
 
 

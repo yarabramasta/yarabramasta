@@ -1,18 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useChangeCurrent } from '../hooks/useChangeCurrent';
-import { GlobalContext } from '../context/GlobalContext';
 
 // main
 function Header() {
-  const { current } = useContext(GlobalContext);
-  const [setHome] = useChangeCurrent();
-  useEffect(() => {
-    if (current.isInitial === true) {
-      setHome();
-    }
-  }, [current]);
-
   return (
     <div className="header fl-h">
       <Logo />

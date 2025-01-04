@@ -1,16 +1,23 @@
-## Hi there 👋
+# Hi there, I'm Yara Bramasta! 👋
 
-<!--
-**yarabramasta/yarabramasta** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Software engineer from Malang, Indonesia. I love diving into the world of web and mobile (Android) development.
 
-Here are some ideas to get you started:
+## What I'm Up To
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- 🔭 Lately, I've been deep into [Dicoding](https://www.dicoding.com/learningpaths/7) professional courses for native Android development using Kotlin, XML views, and Jetpack Compose.
+- 💬 Ask me about Flutter! I've been working with it since my highschool senior year—roughly 3-4 years now.
+- 🌱 I have a strong interest in Node.js, especially backend development with Hono, and I'm also exploring fullstack development with Next.js.
+- 📌 Check out my most proud projects pinned on my GitHub profile. They're some cool stuff from my android development courses!
+
+## Skills
+
+- **Languages:** JavaScript (TypeScript), Dart, Kotlin
+- **Frameworks & Libraries:** Flutter, Node.js, Next.js, Jetpack Compose
+- **Tools & Platforms:** Visual Studio Code, Android Studio, Git, GitHub
+
+## Get in Touch
+
+- 📧 Email: [yarabram111@gmail.com](mailto:yarabram111@gmail.com)
+- 💼 LinkedIn: [Yara Bramasta](https://linkedin.com/in/yara-bramasta)
+
+Looking forward to connecting with you! 😄

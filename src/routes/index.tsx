@@ -52,7 +52,7 @@ function RouteComponent() {
           {content.intros.map((text, index) => (
             <motion.p
               key={`introduction-paragraph-key-${Math.random()}`}
-              initial={{ opacity: 0, filter: 'blur(4px)', y: 6 }}
+              initial={{ opacity: 0, filter: 'blur(4px)', y: 8 }}
               animate={{ opacity: 1, filter: 'blur(0)', y: 0 }}
               transition={{
                 duration: 0.8,
@@ -101,7 +101,7 @@ function JobTitleBadge() {
         </Badge>
       </PopoverTrigger>
       <PopoverContent
-        side={isMobile ? 'bottom' : 'right'}
+        side={isMobile ? 'top' : 'right'}
         sideOffset={8}
         align={isMobile ? 'start' : 'center'}
         className="h-fit w-fit p-2"

@@ -1,7 +1,9 @@
+import type { Theme } from '~/lib/theme'
+
 import { cn } from '~/lib/utils'
 
 interface GrainyBackgroundProps {
-  theme: 'dark' | 'light'
+  theme: Theme
 }
 
 export default function GrainyBackground({ theme }: GrainyBackgroundProps) {

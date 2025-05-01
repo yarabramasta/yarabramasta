@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { motion } from 'motion/react'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent
@@ -11,7 +12,7 @@ function RouteComponent() {
         <nav></nav>
       </header>
       <main className="no-scrollbar relative w-full flex-1 overflow-y-auto p-6">
-        <section className="mb-10"></section>
+        <section className="mb-10 h-36"></section>
         <section
           id="about-me"
           className="[&>p]:text-foreground/90 relative flex w-full flex-col space-y-2 [&>p]:text-sm [&>p]:leading-loose"
@@ -20,18 +21,11 @@ function RouteComponent() {
             <h1 className="text-xl leading-tight font-semibold">
               Yara Bramasta
             </h1>
-            <h2
-              role="button"
-              className="from-secondary/70 to-secondary/90 border-muted ring-ring/20 active:from-secondary/80 hover:to-secondary/80 w-fit cursor-pointer rounded-sm border bg-gradient-to-b to-60% px-1 py-px ring-1 backdrop-blur-sm transition duration-150 selection:bg-transparent selection:text-current hover:shadow-sm"
-            >
-              <span className="text-muted-foreground text-shadow-secondary/80 block font-mono text-xs leading-normal font-medium text-shadow-xs">
-                Software Engineer
-              </span>
-            </h2>
+            <JobTitleBadge />
           </div>
           <p>
             Hi, I&apos;m Bram — a software engineer specialized at mobile app
-            development based in Malang, Indonesia.
+            development, based in Malang, Indonesia.
           </p>
           <p>
             I have over four years of experience in software engineering, with
@@ -57,5 +51,18 @@ function RouteComponent() {
         </section>
       </main>
     </div>
+  )
+}
+
+function JobTitleBadge() {
+  return (
+    <motion.h2
+      role="button"
+      className="from-secondary/90 to-secondary/70 border-muted active:from-secondary/70 hover:to-secondary/90 relative w-fit cursor-pointer rounded-sm border bg-gradient-to-b to-60% px-1 py-px backdrop-blur-sm transition duration-150 selection:bg-transparent selection:text-current hover:shadow-sm"
+    >
+      <span className="text-muted-foreground text-shadow-secondary/80 block font-mono text-xs leading-normal font-medium text-shadow-xs">
+        Software Engineer
+      </span>
+    </motion.h2>
   )
 }

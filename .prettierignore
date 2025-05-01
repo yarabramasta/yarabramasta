@@ -1,3 +1,10 @@
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+node_modules
+bun.lock
+dist
+coverage
+.vinxi
+.output
+*.md

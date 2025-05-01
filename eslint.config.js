@@ -9,7 +9,7 @@ export default antfu(
       css: true,
       markdown: false
     },
-    stylistic: true,
+    stylistic: false,
     react: true,
     ignores: [
       'node_modules',

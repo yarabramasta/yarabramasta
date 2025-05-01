@@ -7,6 +7,9 @@ import {
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
 import GrainyBackground from '~/components/grainy-background'
+import { ThemeProvider } from '~/components/theme-provider'
+import { useTheme } from '~/hooks/use-theme'
+import { getThemeServerFn } from '~/lib/theme'
 import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
@@ -57,7 +60,7 @@ export const Route = createRootRoute({
         { rel: 'canonical', href: 'https://yarabramasta.vercel.app' },
         { name: 'theme-color', content: '#000000' },
         { name: 'color-scheme', content: 'dark light' },
-        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
         {
           name: 'apple-mobile-web-app-status-bar-style',
           content: 'black-translucent'
@@ -72,23 +75,34 @@ export const Route = createRootRoute({
       ]
     }
   },
-  component: () => (
-    <RootDocument>
-      <Outlet />
-      <TanStackRouterDevtools />
-    </RootDocument>
-  )
+  loader: () => getThemeServerFn(),
+  component: RootComponent
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootComponent() {
+  const theme = Route.useLoaderData()
+
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <ThemeProvider theme={theme}>
+      <RootDocument>
+        <Outlet />
+        <TanStackRouterDevtools />
+      </RootDocument>
+    </ThemeProvider>
+  )
+}
+
+function RootDocument({ children }: { children: React.ReactNode }) {
+  const { theme } = useTheme()
+
+  return (
+    <html lang="en" className={theme} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="transition duration-300 ease-in-out">
         {children}
-        <GrainyBackground theme="dark" />
+        <GrainyBackground theme={theme} />
         <Scripts />
         <script
           type="application/ld+json"

@@ -1,6 +1,18 @@
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
+import { useRef, useState } from 'react'
+
+import {
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+  MoonIcon,
+  SunIcon
+} from '@radix-ui/react-icons'
 import { createFileRoute } from '@tanstack/react-router'
-import { AnimatePresence, motion } from 'motion/react'
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll
+} from 'motion/react'
 
 import { Badge } from '~/components/ui/badge'
 import { Button } from '~/components/ui/button'
@@ -11,36 +23,50 @@ import {
 } from '~/components/ui/popover'
 import { useIsMobile } from '~/hooks/use-mobile'
 import { useTheme } from '~/hooks/use-theme'
+import { cn } from '~/lib/utils'
 
 export const Route = createFileRoute('/')({
-  loader: async () => {
-    return {
-      content: {
-        intros: [
-          "Hi, I'm Bram — a software engineer specialized at mobile app development, based in Malang, Indonesia.",
-          'I have over four years of experience in software engineering, with more than two spent professionally. My go-to tools to develop apps are Flutter for cross-platform (iOS & Android) and Jetpack Compose for native Android development.',
-          "While mobile is my main focus, I'm currently doing internship as a frontend software engineer at Arkatama software house — starting with Laravel Blade, and now developing a web app using React.js. I'm also interested in Swift for iOS development and excited to expand into that ecosystem soon."
-        ]
-      }
-    }
-  },
   component: RouteComponent
 })
 
+const content = {
+  socials: [
+    {
+      name: 'GitHub - yarabramasta',
+      url: 'https://github.com/yarabramasta',
+      icon: GitHubLogoIcon
+    },
+    {
+      name: 'LinkedIn - Yara Bramasta',
+      url: 'https://www.linkedin.com/in/yara-bramasta',
+      icon: LinkedInLogoIcon
+    }
+  ],
+  intros: [
+    "Hi, I'm Bram — a software engineer specialized at mobile app development, based in Malang, Indonesia.",
+    'I have over four years of experience in software engineering, with more than two spent professionally. My go-to tools to develop apps are Flutter for cross-platform (iOS & Android) and Jetpack Compose for native Android development.',
+    "While mobile is my main focus, I'm currently doing internship as a frontend software engineer at Arkatama software house — starting with Laravel Blade, and now developing a web app using React.js. I'm also interested in Swift for iOS development and excited to expand into that ecosystem soon."
+  ]
+}
+
 function RouteComponent() {
-  const { content } = Route.useLoaderData()
+  const mainContainerRef = useRef<HTMLDivElement>(null)
+
+  const { scrollY } = useScroll({ container: mainContainerRef })
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up')
+
+  useMotionValueEvent(scrollY, 'change', current => {
+    const diff = current - (scrollY.getPrevious() || 0)
+    setScrollDirection(diff > 0 ? 'down' : 'up')
+  })
 
   return (
-    <div className="relative mx-auto flex h-dvh w-full max-w-screen-sm flex-col overflow-x-hidden">
-      <header className="sticky top-0 z-10 h-16 w-full">
-        <nav className="flex h-full w-full items-center justify-between px-6">
-          <div className=""></div>
-          <div className="inline-flex items-center justify-end gap-4">
-            <ThemeSwitcherButton />
-          </div>
-        </nav>
-      </header>
-      <main className="no-scrollbar relative w-full flex-1 overflow-y-auto p-6">
+    <div className="relative flex h-dvh w-full flex-col">
+      <Header scrollDirection={scrollDirection} />
+      <main
+        ref={mainContainerRef}
+        className="no-scrollbar relative mx-auto w-full max-w-screen-sm flex-1 overflow-x-hidden overflow-y-auto p-6"
+      >
         <section className="mb-10 h-36"></section>
         <section
           id="introduction"
@@ -79,6 +105,68 @@ function RouteComponent() {
   )
 }
 
+interface HeaderProps {
+  scrollDirection: 'up' | 'down'
+}
+
+function Header({ scrollDirection }: HeaderProps) {
+  return (
+    <header
+      className={cn(
+        'border-muted/30 sticky top-0 z-10 h-16 w-full bg-transparent transition duration-150 ease-out',
+        scrollDirection === 'down'
+          ? 'border-b shadow-sm backdrop-blur-sm'
+          : 'border-b-none shadow-none backdrop-blur-none'
+      )}
+    >
+      <nav className="mx-auto flex h-full w-full max-w-screen-sm items-center justify-between overflow-x-hidden px-6">
+        <div className="inline-flex items-center justify-end gap-4">
+          <ThemeSwitcherButton />
+        </div>
+        <div className="inline-flex items-center justify-end gap-2">
+          {content.socials.map(social => (
+            <Button key={social.name} variant="ghost" size="icon" asChild>
+              <motion.a
+                href={social.url}
+                target="_blank"
+                rel="noreferrer noopener"
+                initial={{ opacity: 0, filter: 'blur(4px)' }}
+                animate={{ opacity: 1, filter: 'blur(0)' }}
+                transition={{
+                  duration: 1,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.15
+                }}
+                className="will-change-auto"
+              >
+                <social.icon className="size-4" />
+              </motion.a>
+            </Button>
+          ))}
+        </div>
+      </nav>
+    </header>
+  )
+}
+
+function MotionIcon({ children }: React.PropsWithChildren) {
+  return (
+    <motion.div
+      className="transform-gpu will-change-auto"
+      initial={{ x: -20 }}
+      animate={{ x: 0 }}
+      exit={{ x: 20 }}
+      transition={{
+        delay: 0.15,
+        duration: 0.3,
+        ease: [0.33, 1, 0.68, 1]
+      }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
 function ThemeSwitcherButton() {
   const { theme, setTheme } = useTheme()
 
@@ -100,35 +188,13 @@ function ThemeSwitcherButton() {
       >
         <AnimatePresence mode="wait">
           {theme === 'dark' ? (
-            <motion.div
-              key="theme-switcher-button-icon-dark"
-              className="transform-gpu will-change-auto"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ x: 20 }}
-              transition={{
-                delay: 0.15,
-                duration: 0.3,
-                ease: [0.33, 1, 0.68, 1]
-              }}
-            >
+            <MotionIcon key="theme-switcher-button-icon-dark">
               <MoonIcon className="size-4" />
-            </motion.div>
+            </MotionIcon>
           ) : (
-            <motion.div
-              key="theme-switcher-button-icon-light"
-              className="transform-gpu will-change-auto"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ x: 20 }}
-              transition={{
-                delay: 0.15,
-                duration: 0.3,
-                ease: [0.33, 1, 0.68, 1]
-              }}
-            >
+            <MotionIcon key="theme-switcher-button-icon-light">
               <SunIcon className="size-4" />
-            </motion.div>
+            </MotionIcon>
           )}
         </AnimatePresence>
       </motion.button>

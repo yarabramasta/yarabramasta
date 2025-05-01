@@ -1,17 +1,11 @@
 import antfu from '@antfu/eslint-config'
 import prettierPlugin from 'eslint-plugin-prettier/recommended'
+import prettierOptions from './prettier.config.js'
 
 export default antfu(
   {
     formatters: {
-      prettierOptions: {
-        semi: false,
-        singleQuote: true,
-        printWidth: 80,
-        trailingComma: 'none',
-        arrowParens: 'avoid',
-        plugins: ['prettier-plugin-tailwindcss']
-      },
+      prettierOptions,
       css: true,
       markdown: false
     },

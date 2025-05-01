@@ -4,10 +4,10 @@
 const config = {
   semi: false,
   singleQuote: true,
-  trailingComma: 'all',
+  trailingComma: 'none',
   printWidth: 80,
   arrowParens: 'avoid',
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: ['prettier-plugin-tailwindcss']
 }
 
 export default config

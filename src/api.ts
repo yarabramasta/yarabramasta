@@ -1,6 +1,6 @@
 import {
   createStartAPIHandler,
-  defaultAPIFileRouteHandler,
+  defaultAPIFileRouteHandler
 } from '@tanstack/react-start/api'
 
 export default createStartAPIHandler(defaultAPIFileRouteHandler)

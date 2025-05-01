@@ -9,20 +9,20 @@ const config = defineConfig({
   vite: {
     plugins: [
       viteTsConfigPaths({ projects: ['./tsconfig.json'] }),
-      tailwindcss(),
+      tailwindcss()
     ],
     build: {
       rollupOptions: {
-        external: ['@tanstack/react-start/server'],
-      },
-    },
+        external: ['@tanstack/react-start/server']
+      }
+    }
   },
   // https://react.dev/learn/react-compiler
   react: {
     babel: {
-      plugins: [['babel-plugin-react-compiler', { target: '19' }]],
-    },
-  },
+      plugins: [['babel-plugin-react-compiler', { target: '19' }]]
+    }
+  }
 })
 
 export default config

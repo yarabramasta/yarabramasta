@@ -5,7 +5,7 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 const config = defineConfig({
   server: { preset: 'node-server', unenv: vercel },
-  tsr: { appDirectory: 'src' },
+  tsr: { appDirectory: 'src', autoCodeSplitting: true },
   vite: {
     plugins: [
       viteTsConfigPaths({ projects: ['./tsconfig.json'] }),

@@ -1,19 +1,27 @@
-import { defineConfig } from '@tanstack/react-start/config'
-import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from '@tanstack/react-start/config'
+import { vercel } from 'unenv'
+import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 const config = defineConfig({
-  tsr: {
-    appDirectory: 'src',
-  },
+  server: { preset: 'node-server', unenv: vercel },
+  tsr: { appDirectory: 'src' },
   vite: {
     plugins: [
-      // this is the plugin that enables path aliases
-      viteTsConfigPaths({
-        projects: ['./tsconfig.json'],
-      }),
+      viteTsConfigPaths({ projects: ['./tsconfig.json'] }),
       tailwindcss(),
     ],
+    build: {
+      rollupOptions: {
+        external: ['@tanstack/react-start/server'],
+      },
+    },
+  },
+  // https://react.dev/learn/react-compiler
+  react: {
+    babel: {
+      plugins: [['babel-plugin-react-compiler', { target: '19' }]],
+    },
   },
 })
 

@@ -1,10 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
-  component: App
+  component: RouteComponent
 })
 
-function App() {
+function RouteComponent() {
   return (
     <div className="relative mx-auto flex h-dvh w-full max-w-screen-sm flex-col overflow-x-hidden">
       <header className="sticky top-0 z-10 h-14 w-full">
@@ -14,13 +14,20 @@ function App() {
         <section className="mb-10"></section>
         <section
           id="about-me"
-          className="relative flex w-full flex-col space-y-2 [&>p]:text-sm [&>p]:leading-loose"
+          className="[&>p]:text-foreground/90 relative flex w-full flex-col space-y-2 [&>p]:text-sm [&>p]:leading-loose"
         >
           <div className="mb-4 space-y-2">
-            <h1 className="text-2xl leading-tight font-semibold">
+            <h1 className="text-xl leading-tight font-semibold">
               Yara Bramasta
             </h1>
-            <h2 className="font-mono text-sm font-medium">Software Engineer</h2>
+            <h2
+              role="button"
+              className="from-secondary/70 to-secondary/90 border-muted ring-ring/20 active:from-secondary/80 hover:to-secondary/80 w-fit cursor-pointer rounded-sm border bg-gradient-to-b to-60% px-1 py-px ring-1 backdrop-blur-sm transition duration-150 selection:bg-transparent selection:text-current hover:shadow-sm"
+            >
+              <span className="text-muted-foreground text-shadow-secondary/80 block font-mono text-xs leading-normal font-medium text-shadow-xs">
+                Software Engineer
+              </span>
+            </h2>
           </div>
           <p>
             Hi, I&apos;m Bram — a software engineer specialized at mobile app

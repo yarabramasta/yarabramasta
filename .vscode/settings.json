@@ -9,8 +9,8 @@
     "**/routeTree.gen.ts": true
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always",
-    "source.organizeImports": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
   "editor.formatOnSave": false,
   "prettier.enable": false,

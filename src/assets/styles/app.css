@@ -54,6 +54,10 @@
   code {
     @apply font-mono;
   }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
 }
 
 @layer utilities {

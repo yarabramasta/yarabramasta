@@ -7,7 +7,7 @@ import {
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
 import appCss from '~/assets/styles/app.css?url'
-import AnimatedGrainyBackground from '~/components/animated-grainy-background'
+import GrainyBackground from '~/components/grainy-background'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -28,13 +28,13 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
         {children}
-        <AnimatedGrainyBackground theme="light" />
+        <GrainyBackground theme="dark" />
         <Scripts />
       </body>
     </html>

@@ -6,8 +6,8 @@ import {
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
-import appCss from '~/assets/styles/app.css?url'
 import GrainyBackground from '~/components/grainy-background'
+import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
   head: () => {

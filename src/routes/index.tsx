@@ -36,7 +36,7 @@ function App() {
             While mobile is my main focus, I'm currently doing internship as a
             frontend software engineer at{' '}
             <a
-              href="#"
+              href="https://arkatama.id/"
               target="_blank"
               rel="noreferrer noopener"
               className="hover:underline"

@@ -125,7 +125,7 @@ function IcosphereModel({ isDragging }: IcosphereModelProps) {
 
   useEffect(() => {
     const mat = materials['Recycled Paper']
-    mat.color.set(theme === 'dark' ? '#3b3a37' : '#dad9d6')
+    mat.color.set(theme === 'dark' ? '#494844' : '#dad9d6')
   }, [theme, materials])
 
   return (

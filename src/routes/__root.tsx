@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react'
+
 import {
   createRootRoute,
   HeadContent,
@@ -5,8 +7,10 @@ import {
   Scripts
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { useMotionValueEvent, useScroll } from 'motion/react'
 
 import GrainyBackground from '~/components/grainy-background'
+import Header from '~/components/header'
 import { ThemeProvider } from '~/components/theme-provider'
 import { useTheme } from '~/hooks/use-theme'
 import { getThemeServerFn } from '~/lib/theme'
@@ -47,7 +51,7 @@ export const Route = createRootRoute({
         { property: 'og:title', content: title },
         { property: 'og:description', content: description },
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://yarabramasta.vercel.app' },
+        { property: 'og:url', content: 'https://ybrmst.dev' },
         {
           property: 'og:image:alt',
           content: 'Yara Bramasta - Software Engineer'
@@ -57,8 +61,8 @@ export const Route = createRootRoute({
         { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:title', content: title },
         { name: 'twitter:description', content: description },
-        { rel: 'canonical', href: 'https://yarabramasta.vercel.app' },
-        { name: 'theme-color', content: '#000000' },
+        { rel: 'canonical', href: 'https://ybrmst.dev' },
+        { name: 'theme-color', content: '#2a2a28' },
         { name: 'color-scheme', content: 'dark light' },
         { name: 'mobile-web-app-capable', content: 'yes' },
         {
@@ -100,13 +104,31 @@ function RootComponent() {
 function RootDocument({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme()
 
+  const mainContainer = useRef<HTMLDivElement>(null)
+
+  const { scrollY } = useScroll({ container: mainContainer })
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up')
+
+  useMotionValueEvent(scrollY, 'change', current => {
+    const diff = current - (scrollY.getPrevious() || 0)
+    setScrollDirection(diff > 0 ? 'down' : 'up')
+  })
+
   return (
     <html lang="en" className={theme} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body className="transition duration-300 ease-in-out">
-        {children}
+        <div className="relative flex h-dvh w-full flex-col overflow-x-hidden">
+          <Header scrollDirection={scrollDirection} />
+          <main
+            ref={mainContainer}
+            className="no-scrollbar mx-auto w-full max-w-screen-sm flex-1 overflow-x-hidden overflow-y-auto px-6 pb-6"
+          >
+            {children}
+          </main>
+        </div>
         <GrainyBackground theme={theme} />
         <Scripts />
         <script
@@ -121,7 +143,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               description:
                 'Software engineer specialized in mobile app development',
               knowsAbout: ['Flutter', 'Android', 'Jetpack Compose', 'React.js'],
-              url: 'https://yarabramasta.vercel.app'
+              url: 'https://ybrmst.dev'
             })
           }}
         />

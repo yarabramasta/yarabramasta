@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 
+import IcosphereScene from '~/components/icoshpere-scene'
 import { Badge } from '~/components/ui/badge'
 import {
   Tooltip,
@@ -22,7 +23,9 @@ const intros = [
 function RouteComponent() {
   return (
     <div className="w-full space-y-6">
-      <section className="relative h-56"></section>
+      <section className="relative h-56">
+        <IcosphereScene />
+      </section>
       <section
         id="introduction"
         className="relative flex w-full flex-col space-y-2"

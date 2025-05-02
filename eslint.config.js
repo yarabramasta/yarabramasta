@@ -16,7 +16,8 @@ export default antfu(
       'pnpm-lock.yaml',
       '.output',
       '.vinxi',
-      '**/routeTree.gen.ts'
+      '**/routeTree.gen.ts',
+      'public'
     ]
   },
   {

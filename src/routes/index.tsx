@@ -3,11 +3,11 @@ import { motion } from 'motion/react'
 
 import { Badge } from '~/components/ui/badge'
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger
-} from '~/components/ui/popover'
-import { useIsMobile } from '~/hooks/use-mobile'
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '~/components/ui/tooltip'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent
@@ -60,52 +60,46 @@ function RouteComponent() {
 }
 
 function JobTitleBadge() {
-  const isMobile = useIsMobile()
-
   return (
-    <Popover>
-      <PopoverTrigger>
-        <Badge
-          role="button"
-          className="relative w-fit cursor-pointer overflow-hidden rounded-sm will-change-auto"
-          asChild
-        >
-          <motion.h2
-            initial={{ opacity: 0, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, filter: 'blur(0)' }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Badge
+            role="button"
+            className="relative w-fit cursor-pointer overflow-hidden rounded-sm will-change-auto"
+            asChild
           >
-            <motion.span
-              className="block transform-gpu font-mono will-change-auto"
-              initial={{ y: 14 }}
-              animate={{ y: 0 }}
+            <motion.h2
+              initial={{ opacity: 0, filter: 'blur(4px)' }}
+              animate={{ opacity: 1, filter: 'blur(0)' }}
               transition={{
-                delay: 0.075 + 0.3,
-                ease: [0.33, 1, 0.68, 1],
-                duration: 0.2
+                duration: 0.6,
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.3
               }}
             >
-              Software Engineer
-            </motion.span>
-          </motion.h2>
-        </Badge>
-      </PopoverTrigger>
-      <PopoverContent
-        side={isMobile ? 'top' : 'right'}
-        sideOffset={8}
-        align={isMobile ? 'start' : 'center'}
-        className="h-fit w-fit p-2"
-      >
-        <motion.span
-          className="text-muted-foreground block max-w-[24ch] text-xs leading-tight font-medium will-change-auto"
-          initial={{ opacity: 0, filter: 'blur(4px)' }}
-          animate={{ opacity: 1, filter: 'blur(0)' }}
-          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        >
-          Yeah you're right, a person who sits in front of a computer all day
-          LOL 😝
-        </motion.span>
-      </PopoverContent>
-    </Popover>
+              <motion.span
+                className="block transform-gpu font-mono will-change-auto"
+                initial={{ y: 14 }}
+                animate={{ y: 0 }}
+                transition={{
+                  delay: 0.075 + 0.3,
+                  ease: [0.33, 1, 0.68, 1],
+                  duration: 0.2
+                }}
+              >
+                Software Engineer
+              </motion.span>
+            </motion.h2>
+          </Badge>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>
+            Yeah you're right, a person who sits in front of a computer all day
+            long... 😝
+          </p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   )
 }

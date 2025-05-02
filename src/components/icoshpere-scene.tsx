@@ -38,16 +38,18 @@ export default function IcosphereScene() {
           <ambientLight intensity={0.3} />
           <directionalLight
             position={[5, 5, 5]}
+            intensity={1.5}
             castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
+            shadow-mapSize-width={2048}
+            shadow-mapSize-height={2048}
+            shadow-bias={-0.0015}
           />
 
-          <Environment preset="city" />
+          <Environment preset="warehouse" />
 
           <ContactShadows
             position={[0, -1, 0]}
-            opacity={0.4}
+            opacity={0.3}
             scale={5}
             blur={2.5}
             far={5}
@@ -125,7 +127,7 @@ function IcosphereModel({ isDragging }: IcosphereModelProps) {
 
   useEffect(() => {
     const mat = materials['Recycled Paper']
-    mat.color.set(theme === 'dark' ? '#494844' : '#dad9d6')
+    mat.color.set(theme === 'dark' ? '#494844' : '#EEEEEC')
   }, [theme, materials])
 
   return (

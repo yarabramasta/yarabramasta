@@ -31,9 +31,9 @@ function RouteComponent() {
         id="introduction"
         className="relative flex w-full flex-col space-y-2"
       >
-        <div className="mb-4 space-y-2">
+        <div className="mb-4 flex flex-col space-y-2">
           <motion.h1
-            className="text-xl leading-tight font-semibold"
+            className="from-foreground via-foreground/50 inline-block bg-gradient-to-r to-transparent bg-clip-text text-2xl leading-tight font-semibold text-transparent"
             initial={{ opacity: 0, filter: 'blur(8px)' }}
             animate={{ opacity: 1, filter: 'blur(0)' }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}

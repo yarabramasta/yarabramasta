@@ -1,20 +1,19 @@
 # Hi there, I'm Yara Bramasta! 👋
 
-Software engineer from Malang, Indonesia. I love diving into the world of web and mobile (Android) development.
+Software engineer from Malang, Indonesia. I excel at mobile app development and currently want to explore more about native iOS development using Swift.
 
 > 🥐 : I never try croissant before if you wonder, it's just my fav emoji lol.
 
 ## What I'm Up To
 
-- 🔭 Lately, I've been deep into [Dicoding](https://www.dicoding.com/learningpaths/7) professional courses for native Android development using Kotlin, XML views, and Jetpack Compose.
-- 💬 Ask me about Flutter! I've been working with it since my highschool senior year—roughly 3-4 years now.
-- 🌱 I have a strong interest in Node.js, especially backend development with [Hono](https://github.com/honojs/hono), and I'm also exploring fullstack development with [Next.js](https://nextjs.org/).
-- 📌 Check out my most proud projects pinned on my GitHub profile. They're some cool stuff from my android development courses!
+- 🥳 I already graduated from [Bangkit Academy](https://id.linkedin.com/company/bangkit-academy) and finish all of my courses about native Android development by [Dicoding](https://www.dicoding.com/learningpaths/7)
+- 🔭 Lately, I've been developing my personal website, since I don't have any right now. Don't forget to check it out https://ybrmst.dev
+- 🐾 Also, Currently I've been doing an internship for Frontend Software Engineer role, developing some projects using Laravel on early months and now I'm using fully React.js probably until I finish my internship
 
 ## Skills
 
 - **Languages:** JavaScript (TypeScript), Dart, Kotlin
-- **Frameworks & Libraries:** Flutter, Node.js, Next.js, Jetpack Compose
+- **Frameworks & Libraries:** Flutter, Node.js, React.js, Jetpack Compose
 - **Tools & Platforms:** Visual Studio Code, Android Studio, Git, GitHub
 
 ## Get in Touch

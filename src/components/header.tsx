@@ -6,7 +6,7 @@ import {
 } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'motion/react'
 
-import { Button } from '~/components/ui/button'
+import { buttonVariants } from '~/components/ui/button'
 import { useTheme } from '~/hooks/use-theme'
 import { cn } from '~/lib/utils'
 
@@ -44,57 +44,53 @@ export default function Header({ scrollDirection }: HeaderProps) {
           : 'border-b-none shadow-none backdrop-blur-none'
       )}
     >
-      <TooltipProvider>
-        <nav className="mx-auto flex h-full w-full max-w-screen-sm items-center justify-between overflow-x-hidden px-6">
-          <div className="inline-flex items-center justify-end gap-4">
-            <ThemeSwitcherButton />
-          </div>
-          <div className="inline-flex items-center justify-end gap-2">
+      <nav className="mx-auto flex h-full w-full max-w-screen-sm items-center justify-between overflow-x-hidden px-6">
+        <div className="inline-flex items-center justify-end gap-4">
+          <ThemeSwitcherButton />
+        </div>
+
+        <div className="inline-flex items-center justify-end gap-2">
+          <TooltipProvider>
             {socials.map(social => (
               <Tooltip
                 key={`social-media-${social.name.replaceAll(' ', '-').toLowerCase()}`}
               >
                 <TooltipTrigger asChild>
-                  <Button
-                    key={`social-media-${social.name.replaceAll(' ', '-').toLowerCase()}`}
-                    variant="ghost"
-                    size="icon"
-                    asChild
+                  <motion.a
+                    href={social.url}
+                    title={social.name}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    initial={{ opacity: 0, filter: 'blur(4px)' }}
+                    animate={{ opacity: 1, filter: 'blur(0)' }}
+                    transition={{
+                      duration: 1,
+                      ease: [0.16, 1, 0.3, 1],
+                      delay: 0.15
+                    }}
+                    className={cn(
+                      buttonVariants({ variant: 'ghost', size: 'icon' })
+                    )}
                   >
-                    <motion.a
-                      href={social.url}
-                      title={social.name}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      initial={{ opacity: 0, filter: 'blur(4px)' }}
-                      animate={{ opacity: 1, filter: 'blur(0)' }}
-                      transition={{
-                        duration: 1,
-                        ease: [0.16, 1, 0.3, 1],
-                        delay: 0.15
-                      }}
-                      className="will-change-auto"
-                    >
-                      <social.icon className="size-4" />
-                    </motion.a>
-                  </Button>
+                    <social.icon className="size-4" />
+                  </motion.a>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{social.name}</p>
                 </TooltipContent>
               </Tooltip>
             ))}
-          </div>
-        </nav>
-      </TooltipProvider>
+          </TooltipProvider>
+        </div>
+      </nav>
     </header>
   )
 }
 
 function MotionIcon({ children }: React.PropsWithChildren) {
   return (
-    <motion.div
-      className="transform-gpu will-change-auto"
+    <motion.span
+      className="block transform-gpu"
       initial={{ x: -20 }}
       animate={{ x: 0 }}
       exit={{ x: 20 }}
@@ -105,7 +101,7 @@ function MotionIcon({ children }: React.PropsWithChildren) {
       }}
     >
       {children}
-    </motion.div>
+    </motion.span>
   )
 }
 
@@ -113,42 +109,31 @@ function ThemeSwitcherButton() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <Button
-          size="icon"
-          className="cursor-pointer overflow-hidden"
-          variant="brand"
-          onClick={() => {
-            setTheme(theme === 'dark' ? 'light' : 'dark')
-          }}
-          asChild
-        >
-          <motion.button
-            type="button"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <AnimatePresence mode="wait">
-              {theme === 'dark' ? (
-                <MotionIcon key="theme-switcher-button-icon-dark">
-                  <MoonIcon className="size-4" />
-                </MotionIcon>
-              ) : (
-                <MotionIcon key="theme-switcher-button-icon-light">
-                  <SunIcon className="size-4" />
-                </MotionIcon>
-              )}
-            </AnimatePresence>
-          </motion.button>
-        </Button>
-      </TooltipTrigger>
-      <TooltipContent>
-        <p>
-          {theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-        </p>
-      </TooltipContent>
-    </Tooltip>
+    <motion.button
+      type="button"
+      onClick={() => {
+        setTheme(theme === 'dark' ? 'light' : 'dark')
+      }}
+      className={cn(
+        'relative cursor-pointer overflow-hidden',
+        buttonVariants({ variant: 'brand', size: 'icon' })
+      )}
+      title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <AnimatePresence mode="wait">
+        {theme === 'dark' ? (
+          <MotionIcon key="theme-switcher-button-icon-dark">
+            <MoonIcon className="size-4" />
+          </MotionIcon>
+        ) : (
+          <MotionIcon key="theme-switcher-button-icon-light">
+            <SunIcon className="size-4" />
+          </MotionIcon>
+        )}
+      </AnimatePresence>
+    </motion.button>
   )
 }

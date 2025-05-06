@@ -111,7 +111,8 @@ function ThemeSwitcherButton() {
   return (
     <motion.button
       type="button"
-      onClick={() => {
+      onClick={e => {
+        e.persist()
         setTheme(theme === 'dark' ? 'light' : 'dark')
       }}
       className={cn(

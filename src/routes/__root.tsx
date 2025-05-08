@@ -62,7 +62,7 @@ export const Route = createRootRoute({
         { name: 'twitter:title', content: title },
         { name: 'twitter:description', content: description },
         { rel: 'canonical', href: 'https://ybrmst.dev' },
-        { name: 'theme-color', content: '#3b3a37' },
+        { name: 'theme-color', content: '#cfceca' },
         { name: 'color-scheme', content: 'dark light' },
         { name: 'mobile-web-app-capable', content: 'yes' },
         {

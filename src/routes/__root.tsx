@@ -7,6 +7,7 @@ import {
   Scripts
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { Analytics } from '@vercel/analytics'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 
 import GrainyBackground from '~/components/grainy-background'
@@ -95,6 +96,7 @@ function RootComponent() {
     <ThemeProvider theme={theme}>
       <RootDocument>
         <Outlet />
+        <Analytics />
         <TanStackRouterDevtools />
       </RootDocument>
     </ThemeProvider>

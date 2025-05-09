@@ -1,4 +1,5 @@
 import {
+  AvatarIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
   MoonIcon,
@@ -31,6 +32,11 @@ const socials = [
     name: 'LinkedIn - Yara Bramasta',
     url: 'https://www.linkedin.com/in/yara-bramasta',
     icon: LinkedInLogoIcon
+  },
+  {
+    name: 'Resume - Yara Bramasta',
+    url: '/resume.pdf',
+    icon: AvatarIcon
   }
 ]
 

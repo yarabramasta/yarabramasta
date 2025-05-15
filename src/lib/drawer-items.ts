@@ -4,7 +4,7 @@ type DrawerItem =
   | { title: string; href: string; type: 'link' }
   | { title: string; type: 'label' }
 
-const getDrawerItemsFn = createServerFn().handler(async () => {
+const getDrawerItemsServerFn = createServerFn().handler(async () => {
   const links: DrawerItem[] = [
     { title: 'Portfolio', type: 'label' },
     {
@@ -67,5 +67,5 @@ const getDrawerItemsFn = createServerFn().handler(async () => {
   return links
 })
 
-export { getDrawerItemsFn }
+export { getDrawerItemsServerFn }
 export type { DrawerItem }

@@ -12,6 +12,13 @@ import {
 import { cn } from '~/lib/utils'
 
 export const Route = createFileRoute('/')({
+  beforeLoad: async ({ context: { queryClient } }) => {
+    await queryClient.ensureQueryData({
+      queryKey: ['drawer-items'],
+      queryFn: () =>
+        import('~/lib/drawer-items').then(mod => mod.getDrawerItemsServerFn())
+    })
+  },
   component: RouteComponent
 })
 

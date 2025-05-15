@@ -1,7 +1,10 @@
 import { useRef, useState } from 'react'
 
+import type { QueryClient } from '@tanstack/react-query'
+
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import {
-  createRootRoute,
+  createRootRouteWithContext,
   HeadContent,
   Outlet,
   Scripts
@@ -12,12 +15,13 @@ import { useMotionValueEvent, useScroll } from 'motion/react'
 
 import GrainyBackground from '~/components/grainy-background'
 import Header from '~/components/header'
-import { ThemeProvider } from '~/components/theme-provider'
 import { useTheme } from '~/hooks/use-theme'
 import { getThemeServerFn } from '~/lib/theme'
 import appCss from '~/styles/app.css?url'
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient
+}>()({
   head: () => {
     const title = 'Yara Bramasta | Software Engineer'
     const description =
@@ -85,21 +89,24 @@ export const Route = createRootRoute({
       ]
     }
   },
-  loader: () => getThemeServerFn(),
+  loader: async ({ context: { queryClient } }) => {
+    const theme = await queryClient.ensureQueryData({
+      queryKey: ['theme'],
+      queryFn: () => getThemeServerFn()
+    })
+    return { theme }
+  },
   component: RootComponent
 })
 
 function RootComponent() {
-  const theme = Route.useLoaderData()
-
   return (
-    <ThemeProvider theme={theme}>
-      <RootDocument>
-        <Outlet />
-        <Analytics framework="tanstack-start" />
-        <TanStackRouterDevtools />
-      </RootDocument>
-    </ThemeProvider>
+    <RootDocument>
+      <Outlet />
+      <Analytics framework="tanstack-start" />
+      <TanStackRouterDevtools position="bottom-right" />
+      <ReactQueryDevtools buttonPosition="bottom-left" />
+    </RootDocument>
   )
 }
 
@@ -107,7 +114,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme()
 
   const mainContainer = useRef<HTMLDivElement>(null)
-
   const { scrollY } = useScroll({ container: mainContainer })
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up')
 

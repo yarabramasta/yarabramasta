@@ -1,9 +1,46 @@
-import { use } from 'react'
+import {
+  useMutation,
+  useQueryClient,
+  useSuspenseQuery
+} from '@tanstack/react-query'
+import { useServerFn } from '@tanstack/react-start'
 
-import { ThemeContext } from '~/components/theme-provider'
+import type { Theme } from '~/lib/theme'
+
+import { getThemeServerFn, setThemeServerFn } from '~/lib/theme'
+
+const queryKey = ['theme'] as const
 
 export function useTheme() {
-  const val = use(ThemeContext)
-  if (!val) throw new Error('useTheme called outside of ThemeProvider!')
-  return val
+  const queryClient = useQueryClient()
+
+  const getTheme = useServerFn(getThemeServerFn)
+  const { data: theme } = useSuspenseQuery({
+    queryKey,
+    queryFn: () => getTheme()
+  })
+
+  const setTheme = useServerFn(setThemeServerFn)
+  const { mutate } = useMutation({
+    mutationFn: (theme: Theme) => setTheme({ data: theme }),
+    onMutate: async (newTheme: Theme) => {
+      await queryClient.cancelQueries({ queryKey })
+      const previousTheme = queryClient.getQueryData<Theme>(queryKey)
+      queryClient.setQueryData(queryKey, newTheme)
+
+      return { previousTheme, newTheme }
+    },
+    onError: (err, _newTheme, context) => {
+      queryClient.setQueryData(queryKey, context?.previousTheme)
+      throw err
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: ['theme'] })
+    }
+  })
+
+  return {
+    theme,
+    setTheme: mutate
+  }
 }

@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-
+import { useSuspenseQuery } from '@tanstack/react-query'
 import { Link } from '@tanstack/react-router'
 import { useServerFn } from '@tanstack/react-start'
 import { AnimatePresence, motion } from 'motion/react'
@@ -8,7 +7,7 @@ import { match, P } from 'ts-pattern'
 import type { DrawerItem } from '~/lib/drawer-items'
 
 import { useIsMobile } from '~/hooks/use-mobile'
-import { getDrawerItemsFn } from '~/lib/drawer-items'
+import { getDrawerItemsServerFn } from '~/lib/drawer-items'
 import { cn } from '~/lib/utils'
 
 import {
@@ -109,17 +108,12 @@ function ResponsiveDrawerTrigger(
 }
 
 function ResponsiveDrawerContent() {
-  const getLinks = useServerFn(getDrawerItemsFn)
-  const [links, setLinks] = useState<DrawerItem[]>([])
-
-  useEffect(() => {
-    getLinks().then(setLinks)
-
-    return () => {
-      setLinks([])
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const getLinks = useServerFn(getDrawerItemsServerFn)
+  const { data: links } = useSuspenseQuery({
+    queryKey: ['drawer-items'] as const,
+    queryFn: () => getLinks(),
+    refetchOnWindowFocus: false
+  })
 
   return (
     <TooltipProvider>

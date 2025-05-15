@@ -6,4 +6,4 @@ dist-ssr
 .output
 .vinxi
 .zed
-*timestamp
+*.timestamp*

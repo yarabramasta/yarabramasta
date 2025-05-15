@@ -54,5 +54,10 @@ export default antfu(
       'test/prefer-lowercase-title': 'off'
     }
   },
-  prettierPlugin
+  prettierPlugin,
+  {
+    rules: {
+      'prettier/prettier': 'warn'
+    }
+  }
 )

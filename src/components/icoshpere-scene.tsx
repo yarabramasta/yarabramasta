@@ -30,7 +30,7 @@ export default function IcosphereScene() {
       <Canvas
         shadows
         camera={{ position: [0, 0, 3], fov: 60 }}
-        className="h-full bg-transparent"
+        className="h-full transform-gpu bg-transparent"
       >
         <Suspense fallback={null}>
           <IcosphereModel isDragging={isDragging} />

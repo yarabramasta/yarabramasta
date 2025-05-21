@@ -15,6 +15,7 @@ import { useMotionValueEvent, useScroll } from 'motion/react'
 
 import GrainyBackground from '~/components/grainy-background'
 import Header from '~/components/header'
+import NotFoundComponent from '~/components/not-found'
 import { useTheme } from '~/hooks/use-theme'
 import { getThemeServerFn } from '~/lib/theme'
 import appCss from '~/styles/app.css?url'
@@ -96,6 +97,7 @@ export const Route = createRootRouteWithContext<{
     })
     return { theme }
   },
+  notFoundComponent: NotFoundComponent,
   component: RootComponent
 })
 
@@ -139,22 +141,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </div>
         <GrainyBackground theme={theme} />
         <Scripts />
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react-dom/no-dangerously-set-innerhtml
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Yara Bramasta',
-              jobTitle: 'Software Engineer',
-              description:
-                'Software engineer specialized in mobile app development',
-              knowsAbout: ['Flutter', 'Android', 'Jetpack Compose', 'React.js'],
-              url: 'https://ybrmst.dev'
-            })
-          }}
-        />
       </body>
     </html>
   )

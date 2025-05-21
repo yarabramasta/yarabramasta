@@ -1,8 +1,5 @@
-import { useState } from 'react'
-
 import {
-  AvatarIcon,
-  DotsVerticalIcon,
+  FileIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
   MoonIcon,
@@ -14,7 +11,6 @@ import { buttonVariants } from '~/components/ui/button'
 import { useTheme } from '~/hooks/use-theme'
 import { cn } from '~/lib/utils'
 
-import { ResponsiveDrawer, ResponsiveDrawerTrigger } from './responsive-drawer'
 import {
   Tooltip,
   TooltipContent,
@@ -40,88 +36,60 @@ const socials = [
   {
     name: 'Resume - Yara Bramasta',
     url: '/resume.pdf',
-    icon: AvatarIcon
+    icon: FileIcon
   }
 ]
 
 export default function Header({ scrollDirection }: HeaderProps) {
-  const [sheetOpen, setSheetOpen] = useState(false)
-
   return (
-    <ResponsiveDrawer open={sheetOpen} onOpenChange={setSheetOpen}>
-      <header
-        className={cn(
-          'border-muted/30 sticky top-0 z-10 h-16 w-full bg-transparent',
-          scrollDirection === 'down'
-            ? 'border-b shadow-sm backdrop-blur-sm'
-            : 'border-b-none shadow-none backdrop-blur-none'
-        )}
-      >
-        <nav className="mx-auto flex h-full w-full max-w-screen-sm items-center justify-between overflow-x-hidden px-6">
-          <div className="inline-flex items-center justify-end gap-4">
-            <ThemeSwitcherButton />
-          </div>
+    <header
+      className={cn(
+        'border-muted/30 sticky top-0 z-10 h-16 w-full bg-transparent',
+        scrollDirection === 'down'
+          ? 'border-b shadow-sm backdrop-blur-sm'
+          : 'border-b-none shadow-none backdrop-blur-none'
+      )}
+    >
+      <nav className="mx-auto flex h-full w-full max-w-screen-sm items-center justify-between overflow-x-hidden px-6">
+        <div className="inline-flex items-center justify-end gap-4">
+          <ThemeSwitcherButton />
+        </div>
 
-          <div className="inline-flex items-center justify-end gap-2">
-            <TooltipProvider>
-              {socials.map(social => (
-                <Tooltip
-                  key={`social-media-${social.name.replaceAll(' ', '-').toLowerCase()}`}
-                >
-                  <TooltipTrigger asChild>
-                    <motion.a
-                      href={social.url}
-                      title={social.name}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      initial={{ opacity: 0, filter: 'blur(4px)' }}
-                      animate={{ opacity: 1, filter: 'blur(0)' }}
-                      transition={{
-                        duration: 1,
-                        ease: [0.16, 1, 0.3, 1],
-                        delay: 0.15
-                      }}
-                      className={cn(
-                        buttonVariants({ variant: 'ghost', size: 'icon' })
-                      )}
-                    >
-                      <social.icon className="size-4" />
-                    </motion.a>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{social.name}</p>
-                  </TooltipContent>
-                </Tooltip>
-              ))}
-              <Tooltip>
+        <div className="inline-flex items-center justify-end gap-2">
+          <TooltipProvider>
+            {socials.map(social => (
+              <Tooltip
+                key={`social-media-${social.name.replaceAll(' ', '-').toLowerCase()}`}
+              >
                 <TooltipTrigger asChild>
-                  <ResponsiveDrawerTrigger asChild>
-                    <motion.button
-                      type="button"
-                      initial={{ opacity: 0, filter: 'blur(4px)' }}
-                      animate={{ opacity: 1, filter: 'blur(0)' }}
-                      transition={{
-                        duration: 1,
-                        ease: [0.16, 1, 0.3, 1],
-                        delay: 0.15
-                      }}
-                      className={cn(
-                        buttonVariants({ variant: 'ghost', size: 'icon' })
-                      )}
-                    >
-                      <DotsVerticalIcon className="size-4" />
-                    </motion.button>
-                  </ResponsiveDrawerTrigger>
+                  <motion.a
+                    href={social.url}
+                    title={social.name}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    initial={{ opacity: 0, filter: 'blur(4px)' }}
+                    animate={{ opacity: 1, filter: 'blur(0)' }}
+                    transition={{
+                      duration: 1,
+                      ease: [0.16, 1, 0.3, 1],
+                      delay: 0.15
+                    }}
+                    className={cn(
+                      buttonVariants({ variant: 'ghost', size: 'icon' })
+                    )}
+                  >
+                    <social.icon className="size-4" />
+                  </motion.a>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Works</p>
+                  <p>{social.name}</p>
                 </TooltipContent>
               </Tooltip>
-            </TooltipProvider>
-          </div>
-        </nav>
-      </header>
-    </ResponsiveDrawer>
+            ))}
+          </TooltipProvider>
+        </div>
+      </nav>
+    </header>
   )
 }
 

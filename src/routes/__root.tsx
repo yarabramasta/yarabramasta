@@ -59,6 +59,10 @@ export const Route = createRootRouteWithContext<{
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://ybrmst.dev' },
         {
+          property: 'og:image',
+          content: 'https://bucket.ybrmst.dev/icon-512-maskable.png'
+        },
+        {
           property: 'og:image:alt',
           content: 'Yara Bramasta - Software Engineer'
         },

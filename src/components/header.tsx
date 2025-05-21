@@ -35,7 +35,7 @@ const socials = [
   },
   {
     name: 'Resume - Yara Bramasta',
-    url: '/resume.pdf',
+    url: 'https://bucket.ybrmst.dev/resume.pdf',
     icon: FileIcon
   }
 ]

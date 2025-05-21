@@ -59,15 +59,15 @@ export const Route = createFileRoute('/')({
       bangkit: [
         {
           title: 'Bangkit Academy - Certificate of Completion',
-          link: '/certificates/bangkit/certificate-of-completion.pdf'
+          link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
         },
         {
           title: 'Bangkit Academy - Certificate of Achievement',
-          link: '/certificates/bangkit/certificate-of-achievement.pdf'
+          link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
         },
         {
           title: 'Bangkit Academy - Graduation Letter',
-          link: '/certificates/bangkit/graduation-letter.pdf'
+          link: 'https://bucket.ybrmst.dev/certificates/bangkit/graduation-letter.pdf'
         }
       ],
       dicoding: [

@@ -13,6 +13,7 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { Analytics } from '@vercel/analytics/react'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 
+import Footer from '~/components/footer'
 import GrainyBackground from '~/components/grainy-background'
 import Header from '~/components/header'
 import NotFoundComponent from '~/components/not-found'
@@ -138,9 +139,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <Header scrollDirection={scrollDirection} />
           <main
             ref={mainContainer}
-            className="no-scrollbar mx-auto w-full max-w-screen-sm flex-1 overflow-x-hidden overflow-y-auto px-6 pb-6"
+            className="no-scrollbar mx-auto w-full max-w-screen-sm flex-1 space-y-24 overflow-x-hidden overflow-y-auto px-6 pb-6"
           >
             {children}
+            <Footer />
           </main>
         </div>
         <GrainyBackground theme={theme} />

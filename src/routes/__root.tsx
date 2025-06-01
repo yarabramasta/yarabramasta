@@ -26,7 +26,7 @@ export const Route = createRootRouteWithContext<{
   head: () => {
     const title = 'Yara Bramasta | Software Engineer'
     const description =
-      'Who is Yara Bramasta? — He is a software engineer specialized at mobile app development based in Malang, Indonesia.'
+      'Who is Yara Bramasta? — Software engineer specialized at mobile app development based in Malang, Indonesia.'
     const keywords = [
       'software engineer',
       'mobile app developer',

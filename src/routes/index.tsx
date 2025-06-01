@@ -1,15 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { motion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
+
+import type { Portfolio } from '~/components/portfolio-card'
 
 import IcosphereScene from '~/components/icoshpere-scene'
-import { badgeVariants } from '~/components/ui/badge'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '~/components/ui/tooltip'
-import { cn } from '~/lib/utils'
+import JobTitleBadge from '~/components/job-title-badge'
+import PortfolioCard from '~/components/portfolio-card'
+import { cn, styles } from '~/lib/utils'
 
 export const Route = createFileRoute('/')({
   scripts: () => [
@@ -29,7 +26,7 @@ export const Route = createFileRoute('/')({
   ],
   loader: async () => ({
     intros: [
-      "Hi, I'm Bram — a software engineer specialized at mobile app development, based in Malang, Indonesia.",
+      "Hi, I'm Bram — a software engineer specialized at mobile app development based in Malang, Indonesia.",
       'I have over four years of experience in software engineering, with more than two spent professionally. My go-to tools to develop apps are Flutter for cross-platform (iOS & Android) and Jetpack Compose for native Android development.',
       "While mobile is my main focus, I'm currently doing internship as a frontend software engineer at Arkatama software house — starting with Laravel Blade, and now developing a web app using React.js. I'm also interested in Swift for iOS development and excited to expand into that ecosystem soon."
     ],
@@ -37,58 +34,108 @@ export const Route = createFileRoute('/')({
       {
         title: 'Sign Sync AI',
         link: '/portfolio/sign-sync-ai',
-        figma: '',
-        stack: [
-          { title: 'Flutter', img: '' },
-          { title: 'Firebase', img: '' },
-          { title: 'Google Gemini', img: '' }
+        picture: 'https://bucket.ybrmst.dev/portfolio/sign-sync-ai-logo.png',
+        year: '2024',
+        description:
+          'Mobile app for student with hearing impairment to make learning more interactive.',
+        externals: [
+          {
+            link: 'https://www.figma.com/design/bc7cRUFLdJhLDgaKqebi8R/SignSyncAI?m=auto&t=I34lavc5FaTrP167-1',
+            title: 'Figma',
+            icon: 'FigmaLogoIcon'
+          },
+          {
+            link: 'https://jurnal.polgan.ac.id/index.php/remik/article/view/14096',
+            title: 'Paper',
+            icon: 'FileTextIcon'
+          }
         ]
       },
       {
         title: 'Clinic AI',
         link: '/portfolio/clinic-ai',
-        figma: '',
-        stack: [
-          { title: 'Flutter', img: '' },
-          { title: 'Firebase', img: '' },
-          { title: 'Google Gemini', img: '' }
+        picture: 'https://bucket.ybrmst.dev/portfolio/clinic-ai-logo.png',
+        year: '2024',
+        description:
+          'AI-powered mobile app for diagnosing and managing health conditions.',
+        externals: [
+          {
+            link: 'https://www.figma.com/design/aslIMvcf0yiOvB9ulPyqfy/Clinic-AI?m=auto&t=I34lavc5FaTrP167-1',
+            title: 'Figma',
+            icon: 'FigmaLogoIcon'
+          }
         ]
       }
-    ],
-    certifications: {
-      bangkit: [
-        {
-          title: 'Bangkit Academy - Certificate of Completion',
-          link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
-        },
-        {
-          title: 'Bangkit Academy - Certificate of Achievement',
-          link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
-        },
-        {
-          title: 'Bangkit Academy - Graduation Letter',
-          link: 'https://bucket.ybrmst.dev/certificates/bangkit/graduation-letter.pdf'
-        }
-      ],
-      dicoding: [
-        {
-          title:
-            'Dicoding - Belajar Pengembangan Aplikasi Android Intermediate',
-          link: 'https://www.dicoding.com/certificates/QLZ93D7W9Z5D'
-        },
-        {
-          title: 'Dicoding - Belajar Penerapan Machine Learning untuk Android',
-          link: 'https://www.dicoding.com/certificates/MRZMYWE0NZYQ'
-        },
-        {
-          title: 'Dicoding - Belajar Fundamental Aplikasi Android',
-          link: 'https://www.dicoding.com/certificates/6RPNYR1Q5Z2M'
-        },
-        {
-          title: 'Dicoding - Belajar Membuat Aplikasi Android untuk Pemula',
-          link: 'https://www.dicoding.com/certificates/53XEQ0K2VXRN'
-        }
-      ]
+    ] satisfies Portfolio[],
+    experiences: {
+      bangkit: {
+        outputs: [
+          {
+            certificate: {
+              title: 'Bangkit Academy - Certificate of Completion',
+              link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
+            }
+          },
+          {
+            certificate: {
+              title: 'Bangkit Academy - Certificate of Achievement',
+              link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
+            },
+            repository: {
+              title: 'Capstone Project',
+              link: 'https://github.com/Capstone-GI2-Footwork'
+            }
+          },
+          {
+            certificate: {
+              title: 'Bangkit Academy - Graduation Letter',
+              link: 'https://bucket.ybrmst.dev/certificates/bangkit/graduation-letter.pdf'
+            }
+          },
+          {
+            certificate: {
+              title:
+                'Dicoding - Belajar Pengembangan Aplikasi Android Intermediate',
+              link: 'https://www.dicoding.com/certificates/QLZ93D7W9Z5D'
+            },
+            repository: {
+              title: 'Android Dicoding Stories',
+              link: 'https://github.com/yarabramasta/android-dicoding-stories'
+            }
+          },
+          {
+            certificate: {
+              title:
+                'Dicoding - Belajar Penerapan Machine Learning untuk Android',
+              link: 'https://www.dicoding.com/certificates/MRZMYWE0NZYQ'
+            },
+            repository: {
+              title: 'Android Asclepius',
+              link: 'https://github.com/yarabramasta/android-asclepius'
+            }
+          },
+          {
+            certificate: {
+              title: 'Dicoding - Belajar Fundamental Aplikasi Android',
+              link: 'https://www.dicoding.com/certificates/6RPNYR1Q5Z2M'
+            },
+            repository: {
+              title: 'Android Dicoding Events',
+              link: 'https://github.com/yarabramasta/android-dicoding-events'
+            }
+          },
+          {
+            certificate: {
+              title: 'Dicoding - Belajar Membuat Aplikasi Android untuk Pemula',
+              link: 'https://www.dicoding.com/certificates/53XEQ0K2VXRN'
+            },
+            repository: {
+              title: 'Android Northgard Clans',
+              link: 'https://github.com/yarabramasta/android-northgard-clans'
+            }
+          }
+        ]
+      }
     }
   }),
   component: RouteComponent
@@ -96,9 +143,10 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   const intros = Route.useLoaderData({ select: data => data.intros })
+  const portfolio = Route.useLoaderData({ select: data => data.portfolio })
 
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-10">
       <section id="3d-scene" className="relative h-56">
         <IcosphereScene />
       </section>
@@ -109,8 +157,11 @@ function RouteComponent() {
       >
         <div className="mb-4 flex flex-col space-y-2">
           <motion.h1
-            className="from-foreground via-foreground/50 inline-block bg-gradient-to-r to-transparent bg-clip-text text-2xl leading-tight font-semibold text-transparent"
-            initial={{ opacity: 0, filter: 'blur(8px)' }}
+            className={cn(
+              styles.text.gradient,
+              'text-2xl leading-tight font-semibold'
+            )}
+            initial={{ opacity: 0, filter: 'blur(6px)' }}
             animate={{ opacity: 1, filter: 'blur(0)' }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
           >
@@ -120,15 +171,14 @@ function RouteComponent() {
         </div>
         {intros.map((text, index) => (
           <motion.p
-            // eslint-disable-next-line react/no-array-index-key
-            key={`introduction-paragraph-key-${index}`}
+            key={text.toLowerCase().replace(/\s+/g, '-')}
             className="text-foreground/80 text-sm leading-loose"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.8,
+              duration: 0.75,
               ease: [0.33, 1, 0.68, 1],
-              delay: 0.075 * index + 0.6
+              delay: 0.15 * index + 0.6
             }}
           >
             {text}
@@ -138,54 +188,32 @@ function RouteComponent() {
 
       <section
         id="portfolio"
-        className="relative flex w-full flex-col space-y-2"
+        className="relative flex w-full flex-col space-y-6"
       >
-        <div className="flex flex-row items-center justify-stretch gap-6"></div>
+        <motion.h2
+          className={cn(
+            styles.text.gradient,
+            'text-xl leading-tight font-semibold'
+          )}
+          initial={{ opacity: 0, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, filter: 'blur(0)' }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+        >
+          Portfolio
+        </motion.h2>
+
+        <div className="grid grid-cols-2 gap-6">
+          <AnimatePresence mode="wait">
+            {portfolio.map((item, i) => (
+              <PortfolioCard
+                key={item.title.toLowerCase().replace(/\s+/g, '-')}
+                index={i}
+                portfolio={item}
+              />
+            ))}
+          </AnimatePresence>
+        </div>
       </section>
     </div>
-  )
-}
-
-function JobTitleBadge() {
-  return (
-    <TooltipProvider>
-      <Tooltip useTouch>
-        <TooltipTrigger asChild>
-          <motion.h2
-            role="button"
-            className={cn(
-              badgeVariants({ variant: 'brand' }),
-              'w-fit cursor-pointer overflow-hidden rounded-sm select-none'
-            )}
-            initial={{ opacity: 0, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, filter: 'blur(0)' }}
-            transition={{
-              duration: 0.6,
-              ease: [0.16, 1, 0.3, 1],
-              delay: 0.3
-            }}
-          >
-            <motion.span
-              className="block transform-gpu font-mono"
-              initial={{ y: 14 }}
-              animate={{ y: 0 }}
-              transition={{
-                delay: 0.075 + 0.3,
-                ease: [0.33, 1, 0.68, 1],
-                duration: 0.2
-              }}
-            >
-              Software Engineer
-            </motion.span>
-          </motion.h2>
-        </TooltipTrigger>
-        <TooltipContent className="ml-2">
-          <p className="w-full max-w-[28ch] md:max-w-full">
-            Yeah you're right, a person who sits in front of a computer all day
-            long... 😝
-          </p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
   )
 }

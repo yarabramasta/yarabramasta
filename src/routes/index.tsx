@@ -66,77 +66,7 @@ export const Route = createFileRoute('/')({
           }
         ]
       }
-    ] satisfies Portfolio[],
-    experiences: {
-      bangkit: {
-        outputs: [
-          {
-            certificate: {
-              title: 'Bangkit Academy - Certificate of Completion',
-              link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
-            }
-          },
-          {
-            certificate: {
-              title: 'Bangkit Academy - Certificate of Achievement',
-              link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
-            },
-            repository: {
-              title: 'Capstone Project',
-              link: 'https://github.com/Capstone-GI2-Footwork'
-            }
-          },
-          {
-            certificate: {
-              title: 'Bangkit Academy - Graduation Letter',
-              link: 'https://bucket.ybrmst.dev/certificates/bangkit/graduation-letter.pdf'
-            }
-          },
-          {
-            certificate: {
-              title:
-                'Dicoding - Belajar Pengembangan Aplikasi Android Intermediate',
-              link: 'https://www.dicoding.com/certificates/QLZ93D7W9Z5D'
-            },
-            repository: {
-              title: 'Android Dicoding Stories',
-              link: 'https://github.com/yarabramasta/android-dicoding-stories'
-            }
-          },
-          {
-            certificate: {
-              title:
-                'Dicoding - Belajar Penerapan Machine Learning untuk Android',
-              link: 'https://www.dicoding.com/certificates/MRZMYWE0NZYQ'
-            },
-            repository: {
-              title: 'Android Asclepius',
-              link: 'https://github.com/yarabramasta/android-asclepius'
-            }
-          },
-          {
-            certificate: {
-              title: 'Dicoding - Belajar Fundamental Aplikasi Android',
-              link: 'https://www.dicoding.com/certificates/6RPNYR1Q5Z2M'
-            },
-            repository: {
-              title: 'Android Dicoding Events',
-              link: 'https://github.com/yarabramasta/android-dicoding-events'
-            }
-          },
-          {
-            certificate: {
-              title: 'Dicoding - Belajar Membuat Aplikasi Android untuk Pemula',
-              link: 'https://www.dicoding.com/certificates/53XEQ0K2VXRN'
-            },
-            repository: {
-              title: 'Android Northgard Clans',
-              link: 'https://github.com/yarabramasta/android-northgard-clans'
-            }
-          }
-        ]
-      }
-    }
+    ] satisfies Portfolio[]
   }),
   component: RouteComponent
 })
@@ -202,7 +132,7 @@ function RouteComponent() {
           Portfolio
         </motion.h2>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <AnimatePresence mode="wait">
             {portfolio.map((item, i) => (
               <PortfolioCard

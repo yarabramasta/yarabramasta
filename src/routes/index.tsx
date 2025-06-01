@@ -6,6 +6,7 @@ import type { Portfolio } from '~/components/portfolio-card'
 import IcosphereScene from '~/components/icoshpere-scene'
 import JobTitleBadge from '~/components/job-title-badge'
 import PortfolioCard from '~/components/portfolio-card'
+import { useScrollContainer } from '~/hooks/use-scroll-container'
 import { cn, styles } from '~/lib/utils'
 
 export const Route = createFileRoute('/')({
@@ -75,10 +76,21 @@ function RouteComponent() {
   const intros = Route.useLoaderData({ select: data => data.intros })
   const portfolio = Route.useLoaderData({ select: data => data.portfolio })
 
+  const { ref: scrollContainer } = useScrollContainer()
+
   return (
     <div className="w-full space-y-10">
       <section id="3d-scene" className="relative h-56">
-        <IcosphereScene />
+        <motion.div
+          className="absolute top-0 left-0 h-full w-full"
+          initial={{ opacity: 0, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, filter: 'blur(0)' }}
+          exit={{ opacity: 0, filter: 'blur(6px)' }}
+          viewport={{ root: scrollContainer, once: true }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+        >
+          <IcosphereScene />
+        </motion.div>
       </section>
 
       <section
@@ -92,7 +104,9 @@ function RouteComponent() {
               'text-2xl leading-tight font-semibold'
             )}
             initial={{ opacity: 0, filter: 'blur(6px)' }}
-            animate={{ opacity: 1, filter: 'blur(0)' }}
+            whileInView={{ opacity: 1, filter: 'blur(0)' }}
+            exit={{ opacity: 0, filter: 'blur(6px)' }}
+            viewport={{ root: scrollContainer, once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
           >
             Yara Bramasta
@@ -104,7 +118,9 @@ function RouteComponent() {
             key={text.toLowerCase().replace(/\s+/g, '-')}
             className="text-foreground/80 text-sm leading-loose"
             initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            viewport={{ root: scrollContainer, once: true }}
             transition={{
               duration: 0.75,
               ease: [0.33, 1, 0.68, 1],
@@ -126,7 +142,9 @@ function RouteComponent() {
             'text-xl leading-tight font-semibold'
           )}
           initial={{ opacity: 0, filter: 'blur(6px)' }}
-          animate={{ opacity: 1, filter: 'blur(0)' }}
+          whileInView={{ opacity: 1, filter: 'blur(0)' }}
+          exit={{ opacity: 0, filter: 'blur(6px)' }}
+          viewport={{ root: scrollContainer, once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
           Portfolio

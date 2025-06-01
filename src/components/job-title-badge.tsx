@@ -1,5 +1,6 @@
 import { motion } from 'motion/react'
 
+import { useScrollContainer } from '~/hooks/use-scroll-container'
 import { cn } from '~/lib/utils'
 
 import { badgeVariants } from './ui/badge'
@@ -11,6 +12,8 @@ import {
 } from './ui/tooltip'
 
 export default function JobTitleBadge() {
+  const { ref: scrollContainer } = useScrollContainer()
+
   return (
     <TooltipProvider>
       <Tooltip useTouch>
@@ -22,7 +25,9 @@ export default function JobTitleBadge() {
               'w-fit cursor-pointer overflow-hidden rounded-sm select-none'
             )}
             initial={{ opacity: 0, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, filter: 'blur(0)' }}
+            whileInView={{ opacity: 1, filter: 'blur(0)' }}
+            exit={{ opacity: 0, filter: 'blur(4px)' }}
+            viewport={{ root: scrollContainer, once: true }}
             transition={{
               duration: 0.6,
               ease: [0.16, 1, 0.3, 1],

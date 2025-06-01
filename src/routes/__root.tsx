@@ -1,5 +1,3 @@
-import { useRef, useState } from 'react'
-
 import type { QueryClient } from '@tanstack/react-query'
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
@@ -11,12 +9,12 @@ import {
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { Analytics } from '@vercel/analytics/react'
-import { useMotionValueEvent, useScroll } from 'motion/react'
 
 import Footer from '~/components/footer'
 import GrainyBackground from '~/components/grainy-background'
 import Header from '~/components/header'
 import NotFoundComponent from '~/components/not-found'
+import { ScrollContainerProvider } from '~/components/scroll-container-provider'
 import { useTheme } from '~/hooks/use-theme'
 import { getThemeServerFn } from '~/lib/theme'
 import appCss from '~/styles/app.css?url'
@@ -120,15 +118,6 @@ function RootComponent() {
 function RootDocument({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme()
 
-  const mainContainer = useRef<HTMLDivElement>(null)
-  const { scrollY } = useScroll({ container: mainContainer })
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up')
-
-  useMotionValueEvent(scrollY, 'change', current => {
-    const diff = current - (scrollY.getPrevious() || 0)
-    setScrollDirection(diff > 0 ? 'down' : 'up')
-  })
-
   return (
     <html lang="en" className={theme} suppressHydrationWarning>
       <head>
@@ -136,14 +125,20 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="transition duration-300 ease-in-out">
         <div className="relative flex h-dvh w-full flex-col overflow-x-hidden">
-          <Header scrollDirection={scrollDirection} />
-          <main
-            ref={mainContainer}
-            className="no-scrollbar mx-auto w-full max-w-screen-sm flex-1 space-y-24 overflow-x-hidden overflow-y-auto px-6 pb-6"
-          >
-            {children}
-            <Footer />
-          </main>
+          <ScrollContainerProvider>
+            {mainContainer => (
+              <>
+                <Header />
+                <main
+                  ref={mainContainer}
+                  className="no-scrollbar mx-auto w-full max-w-screen-sm flex-1 space-y-24 overflow-x-hidden overflow-y-auto px-6 pb-6"
+                >
+                  {children}
+                  <Footer />
+                </main>
+              </>
+            )}
+          </ScrollContainerProvider>
         </div>
         <GrainyBackground theme={theme} />
         <Scripts />

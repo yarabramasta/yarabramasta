@@ -8,6 +8,7 @@ import {
 import { AnimatePresence, motion } from 'motion/react'
 
 import { buttonVariants } from '~/components/ui/button'
+import { useScrollContainer } from '~/hooks/use-scroll-container'
 import { useTheme } from '~/hooks/use-theme'
 import { cn } from '~/lib/utils'
 
@@ -17,10 +18,6 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from './ui/tooltip'
-
-interface HeaderProps {
-  scrollDirection: 'up' | 'down'
-}
 
 const socials = [
   {
@@ -40,12 +37,14 @@ const socials = [
   }
 ]
 
-export default function Header({ scrollDirection }: HeaderProps) {
+export default function Header() {
+  const { scrollDirection, scrollPosition } = useScrollContainer()
+
   return (
     <header
       className={cn(
         'border-muted/30 sticky top-0 z-10 h-16 w-full bg-transparent',
-        scrollDirection === 'down'
+        scrollDirection === 'down' || scrollPosition > 0
           ? 'border-b shadow-sm backdrop-blur-sm'
           : 'border-b-none shadow-none backdrop-blur-none'
       )}

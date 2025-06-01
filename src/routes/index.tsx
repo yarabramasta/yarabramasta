@@ -81,8 +81,6 @@ export const Route = createFileRoute('/')({
           end: new Date(2025, 7, 15),
           format: 'MMMM yyyy'
         },
-        description:
-          'Interned at PT. Arkatama Multi Solusindo, developing web apps from design implementation to API integration. Started with Laravel Blade, later transitioning to React.js for a more atomic frontend workflow.',
         skills: [
           'Web App Development',
           'Laravel Blade',
@@ -122,8 +120,6 @@ export const Route = createFileRoute('/')({
           end: new Date(2024, 11, 31),
           format: 'MMMM yyyy'
         },
-        description:
-          'Participated in Kampus Merdeka Batch 7, a program by the Ministry of Education, focusing on the Android Development track. Gained hands-on experience with native Android development using Kotlin and explored real-world mobile app workflows.',
         skills: [
           'Mobile App Development',
           'Kotlin',
@@ -132,26 +128,6 @@ export const Route = createFileRoute('/')({
           'Firebase ML Kit'
         ],
         catalogs: [
-          {
-            type: 'Certificates',
-            items: [
-              {
-                title: 'Certificate of Completion',
-                img: 'https://bucket.ybrmst.dev/portfolio/bangkit-logo-icon-sized.png',
-                link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-completion.pdf'
-              },
-              {
-                title: 'Certificate of Achievement',
-                img: 'https://bucket.ybrmst.dev/portfolio/bangkit-logo-icon-sized.png',
-                link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
-              },
-              {
-                title: 'Graduation Letter',
-                img: 'https://bucket.ybrmst.dev/portfolio/bangkit-logo-icon-sized.png',
-                link: 'https://bucket.ybrmst.dev/certificates/bangkit/graduation-letter.pdf'
-              }
-            ]
-          },
           {
             type: 'Works',
             items: [
@@ -181,6 +157,26 @@ export const Route = createFileRoute('/')({
                 link: 'https://github.com/yarabramasta/android-northgard-clans'
               }
             ]
+          },
+          {
+            type: 'Certificates',
+            items: [
+              {
+                title: 'Certificate of Completion',
+                img: 'https://bucket.ybrmst.dev/portfolio/bangkit-logo-icon-sized.png',
+                link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-completion.pdf'
+              },
+              {
+                title: 'Certificate of Achievement',
+                img: 'https://bucket.ybrmst.dev/portfolio/bangkit-logo-icon-sized.png',
+                link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
+              },
+              {
+                title: 'Graduation Letter',
+                img: 'https://bucket.ybrmst.dev/portfolio/bangkit-logo-icon-sized.png',
+                link: 'https://bucket.ybrmst.dev/certificates/bangkit/graduation-letter.pdf'
+              }
+            ]
           }
         ]
       },
@@ -194,8 +190,6 @@ export const Route = createFileRoute('/')({
           end: new Date(2024, 6, 1),
           format: 'MMMM yyyy'
         },
-        description:
-          "Did a short internship provided by Dusun Web at 3rd-4th college semester. I'm assigned role as lead frontend software engineer, responsible developing web apps using Next.js and mobile apps using Flutter.",
         skills: [
           'Mobile App Development',
           'Web App Development',
@@ -227,8 +221,6 @@ export const Route = createFileRoute('/')({
           end: new Date(2023, 11, 1),
           format: 'MMMM yyyy'
         },
-        description:
-          "Participating in my lecturers program, developing a website dedicated for traditional drinks & beverage business called Djamoe Soedirdjo. I'm responsible for developing the website using React.js and Vite.",
         skills: ['Web Development', 'React.js', 'Vite', 'Typescript'],
         catalogs: [
           {

@@ -16,7 +16,6 @@ interface Experience {
     end?: Date
     format: string
   }
-  description: string
   skills: string[]
   catalogs: {
     type: string
@@ -126,27 +125,13 @@ function ExperienceCard({
       >
         Skills: {exp.skills.join(', ')}.
       </motion.p>
-      <motion.p
-        className="text-muted-foreground text-xs leading-loose"
-        initial={{ opacity: 0, y: 8 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0 }}
-        viewport={{ root: scrollContainer, once: true }}
-        transition={{
-          duration: 1,
-          ease: [0.16, 1, 0.3, 1],
-          delay: 1 + expIndex * 0.05
-        }}
-      >
-        {exp.description}
-      </motion.p>
       {exp.catalogs.map((catalog, catalogIndex) => (
         <div
           className="space-y-2"
           key={`exp-catalog-${catalog.type.toLowerCase().replace(/\s+/g, '-')}`}
         >
           <motion.h4
-            className="text-muted-foreground/60 text-xs font-medium"
+            className="text-muted-foreground text-xs font-medium"
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}

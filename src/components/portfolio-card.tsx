@@ -126,7 +126,7 @@ function PortfolioCard({ portfolio, index: cardIndex }: PortfolioCardProps) {
                       transition={{
                         duration: 0.6,
                         ease: [0.16, 1, 0.3, 1],
-                        delay: 1.15 + cardIndex * 0.05 + index * 0.05
+                        delay: 1 + cardIndex * 0.05 + index * 0.05
                       }}
                     >
                       <Icon className="inline-block size-4" />

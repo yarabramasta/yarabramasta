@@ -9,6 +9,7 @@ import {
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 import Footer from '~/components/footer'
 import GrainyBackground from '~/components/grainy-background'
@@ -109,6 +110,7 @@ function RootComponent() {
     <RootDocument>
       <Outlet />
       <Analytics framework="tanstack-start" />
+      <SpeedInsights />
       <TanStackRouterDevtools position="bottom-right" />
       <ReactQueryDevtools buttonPosition="bottom-left" />
     </RootDocument>

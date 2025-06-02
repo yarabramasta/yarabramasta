@@ -37,7 +37,7 @@ export const Route = createFileRoute('/')({
       {
         title: 'Sign Sync AI',
         link: '/portfolio/sign-sync-ai',
-        picture: 'https://bucket.ybrmst.dev/portfolio/sign-sync-ai-logo.png',
+        picture: 'https://bucket.ybrmst.dev/brands/sign-sync-ai-logo.png',
         year: '2024',
         description:
           'Mobile app for student with hearing impairment to make learning more interactive.',
@@ -57,7 +57,7 @@ export const Route = createFileRoute('/')({
       {
         title: 'Clinic AI',
         link: '/portfolio/clinic-ai',
-        picture: 'https://bucket.ybrmst.dev/portfolio/clinic-ai-logo.png',
+        picture: 'https://bucket.ybrmst.dev/brands/clinic-ai-logo.png',
         year: '2024',
         description:
           'AI-powered mobile app for diagnosing and managing health conditions.',
@@ -75,7 +75,7 @@ export const Route = createFileRoute('/')({
         job: 'Frontend Software Engineer',
         company: 'PT. Arkatama Multi Solusindo',
         link: 'https://www.arkatama.id',
-        img: 'https://bucket.ybrmst.dev/portfolio/arkatama-logo.png',
+        img: 'https://bucket.ybrmst.dev/brands/arkatama-logo.png',
         period: {
           start: new Date(2025, 1, 15),
           end: new Date(2025, 7, 15),
@@ -94,17 +94,17 @@ export const Route = createFileRoute('/')({
               {
                 link: 'https://pintertani.id',
                 title: 'Pinter Tani',
-                img: 'https://bucket.ybrmst.dev/portfolio/pinter-tani-logo.svg'
+                img: 'https://bucket.ybrmst.dev/brands/pinter-tani-logo.svg'
               },
               {
                 link: 'https://sertifikasi.pintertani.id',
                 title: 'LSP Puslatan',
-                img: 'https://bucket.ybrmst.dev/portfolio/lsp-puslatan-logo.png'
+                img: 'https://bucket.ybrmst.dev/brands/lsp-puslatan-logo.png'
               },
               {
                 link: 'https://presensi-bbk.arkatamalabs.net',
                 title: 'Presensi BBK',
-                img: 'https://bucket.ybrmst.dev/portfolio/presensi-bbk-logo.png'
+                img: 'https://bucket.ybrmst.dev/brands/presensi-bbk-logo.png'
               }
             ]
           }
@@ -114,7 +114,7 @@ export const Route = createFileRoute('/')({
         job: 'Android Development Cohort',
         company: 'Bangkit Academy',
         link: 'https://www.arkatama.id',
-        img: 'https://bucket.ybrmst.dev/portfolio/bangkit-academy-logo.png',
+        img: 'https://bucket.ybrmst.dev/brands/bangkit-academy-logo.png',
         period: {
           start: new Date(2024, 8, 6),
           end: new Date(2024, 11, 31),
@@ -133,27 +133,27 @@ export const Route = createFileRoute('/')({
             items: [
               {
                 title: 'Footwork Apps',
-                img: 'https://bucket.ybrmst.dev/portfolio/ecoroute-logo.png',
+                img: 'https://bucket.ybrmst.dev/brands/ecoroute-logo.png',
                 link: 'https://github.com/Capstone-GI2-Footwork/Footwork-Mobile-Development'
               },
               {
                 title: 'Android Intermediate',
-                img: 'https://bucket.ybrmst.dev/portfolio/dicoding-logo.jpg',
+                img: 'https://bucket.ybrmst.dev/brands/dicoding-logo.jpg',
                 link: 'https://github.com/yarabramasta/android-dicoding-stories'
               },
               {
                 title: 'Android Applied Machine Learning',
-                img: 'https://bucket.ybrmst.dev/portfolio/dicoding-logo.jpg',
+                img: 'https://bucket.ybrmst.dev/brands/dicoding-logo.jpg',
                 link: 'https://github.com/yarabramasta/android-asclepius'
               },
               {
                 title: 'Android Fundamental',
-                img: 'https://bucket.ybrmst.dev/portfolio/dicoding-logo.jpg',
+                img: 'https://bucket.ybrmst.dev/brands/dicoding-logo.jpg',
                 link: 'https://github.com/yarabramasta/android-dicoding-events'
               },
               {
                 title: 'Android Beginner',
-                img: 'https://bucket.ybrmst.dev/portfolio/dicoding-logo.jpg',
+                img: 'https://bucket.ybrmst.dev/brands/dicoding-logo.jpg',
                 link: 'https://github.com/yarabramasta/android-northgard-clans'
               }
             ]
@@ -163,18 +163,23 @@ export const Route = createFileRoute('/')({
             items: [
               {
                 title: 'Certificate of Completion',
-                img: 'https://bucket.ybrmst.dev/portfolio/bangkit-logo-icon-sized.png',
+                img: 'https://bucket.ybrmst.dev/brands/bangkit-logo-icon-sized.png',
                 link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-completion.pdf'
               },
               {
                 title: 'Certificate of Achievement',
-                img: 'https://bucket.ybrmst.dev/portfolio/bangkit-logo-icon-sized.png',
+                img: 'https://bucket.ybrmst.dev/brands/bangkit-logo-icon-sized.png',
                 link: 'https://bucket.ybrmst.dev/certificates/bangkit/certificate-of-achievement.pdf'
               },
               {
                 title: 'Graduation Letter',
-                img: 'https://bucket.ybrmst.dev/portfolio/bangkit-logo-icon-sized.png',
+                img: 'https://bucket.ybrmst.dev/brands/bangkit-logo-icon-sized.png',
                 link: 'https://bucket.ybrmst.dev/certificates/bangkit/graduation-letter.pdf'
+              },
+              {
+                title: 'MSIB Batch 7',
+                img: 'https://bucket.ybrmst.dev/brands/msib-logo.png',
+                link: 'https://bucket.ybrmst.dev/certificates/msib-batch-7-certificate-of-completion.pdf'
               }
             ]
           }
@@ -184,7 +189,7 @@ export const Route = createFileRoute('/')({
         job: 'Frontend Software Engineer',
         company: 'Dusun Web',
         link: 'https://www.arkatama.id',
-        img: 'https://bucket.ybrmst.dev/portfolio/dusun-web-logo.png',
+        img: 'https://bucket.ybrmst.dev/brands/dusun-web-logo.png',
         period: {
           start: new Date(2023, 10, 1),
           end: new Date(2024, 6, 1),
@@ -205,7 +210,7 @@ export const Route = createFileRoute('/')({
               {
                 link: 'https://github.com/yarabramasta/akurat',
                 title: 'Akurat News App',
-                img: 'https://bucket.ybrmst.dev/portfolio/akurat-news-logo.png'
+                img: 'https://bucket.ybrmst.dev/brands/akurat-news-logo.png'
               }
             ]
           }
@@ -214,8 +219,8 @@ export const Route = createFileRoute('/')({
       {
         job: 'Frontend Software Engineer',
         company: 'Universitas Merdeka Malang',
-        link: 'https://bucket.ybrmst.dev/portfolio/sertifikat-hak-milik-djamoesoedirdjo.pdf',
-        img: 'https://bucket.ybrmst.dev/portfolio/unmer-logo.png',
+        link: 'https://unmer.ac.id',
+        img: 'https://bucket.ybrmst.dev/brands/unmer-logo.png',
         period: {
           start: new Date(2023, 8, 1),
           end: new Date(2023, 11, 1),
@@ -229,7 +234,17 @@ export const Route = createFileRoute('/')({
               {
                 link: 'https://djamoesoedirdjo.vercel.app',
                 title: 'Djamoe Soedirdjo',
-                img: 'https://bucket.ybrmst.dev/portfolio/djamoesoedirdjo-logo.png'
+                img: 'https://bucket.ybrmst.dev/brands/djamoesoedirdjo-logo.png'
+              }
+            ]
+          },
+          {
+            type: 'Certificates',
+            items: [
+              {
+                link: 'https://bucket.ybrmst.dev/certificates/sertifikat-hak-milik-djamoesoedirdjo.pdf',
+                title: 'Djamoe Soedirdjo',
+                img: 'https://bucket.ybrmst.dev/brands/djamoesoedirdjo-logo.png'
               }
             ]
           }

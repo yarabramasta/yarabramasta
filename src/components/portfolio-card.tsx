@@ -1,5 +1,4 @@
 import * as RadixIcons from '@radix-ui/react-icons'
-import { Link } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 
 import { useScrollContainer } from '~/hooks/use-scroll-container'
@@ -66,10 +65,7 @@ function PortfolioCard({ portfolio, index: cardIndex }: PortfolioCardProps) {
                 delay: 0.5 + cardIndex * 0.05
               }}
             />
-            <Link
-              to={portfolio.link}
-              className="active:text-foreground/90 hover:text-foreground/80 hover:underline"
-            >
+            <div className="active:text-foreground/90 hover:text-foreground/80 hover:underline">
               <motion.h3
                 className="font-semibold"
                 initial={{ opacity: 0, filter: 'blur(4px)' }}
@@ -84,7 +80,7 @@ function PortfolioCard({ portfolio, index: cardIndex }: PortfolioCardProps) {
               >
                 {portfolio.title}
               </motion.h3>
-            </Link>
+            </div>
           </div>
           <div className="relative h-4 overflow-hidden">
             <motion.p

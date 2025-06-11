@@ -65,7 +65,7 @@ function PortfolioCard({ portfolio, index: cardIndex }: PortfolioCardProps) {
                 delay: 0.5 + cardIndex * 0.05
               }}
             />
-            <div className="active:text-foreground/90 hover:text-foreground/80 hover:underline">
+            <div className="active:text-foreground/90 hover:text-foreground/80">
               <motion.h3
                 className="font-semibold"
                 initial={{ opacity: 0, filter: 'blur(4px)' }}

@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@import '@radix-ui/colors/tomato.css';
+@import '@radix-ui/colors/tomato-dark.css';
+@import '@radix-ui/colors/sand.css';
+@import '@radix-ui/colors/sand-dark.css';
+
+@theme inline {
+  --font-sans: var(--font-plus-jakarta-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+
+  --color-destructive: var(--destructive);
+
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  --background: var(--sand-1);
+  --foreground: var(--sand-12);
+
+  --card: var(--sand-2);
+  --card-foreground: var(--sand-12);
+
+  --popover: var(--sand-2);
+  --popover-foreground: var(--sand-12);
+
+  --primary: var(--sand-7);
+  --primary-foreground: var(--sand-12);
+
+  --secondary: var(--sand-2);
+  --secondary-foreground: var(--sand-12);
+
+  --muted: var(--sand-5);
+  --muted-foreground: var(--sand-11);
+
+  --accent: var(--sand-3);
+  --accent-foreground: var(--sand-12);
+
+  --destructive: var(--tomato-10);
+
+  --border: var(--sand-6);
+  --input: var(--sand-7);
+  --ring: var(--sand-2);
+}
+
+/* .dark {
+} */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground m-0 min-h-dvh overflow-x-hidden font-sans antialiased;
+  }
+
+  code {
+    @apply font-mono;
+  }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

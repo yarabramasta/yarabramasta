@@ -3,9 +3,9 @@ import type { Metadata, Viewport } from 'next'
 import { Geist_Mono, Plus_Jakarta_Sans } from 'next/font/google'
 
 import { ThemeProvider } from '@/components/ui/theme'
+import { cn } from '@/lib/utils'
 
 import './globals.css'
-import { cn } from '@/lib/utils'
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: '--font-plus-jakarta-sans',

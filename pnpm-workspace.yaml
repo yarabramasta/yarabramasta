@@ -1,6 +1,0 @@
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - '@vercel/speed-insights'
-  - esbuild
-  - simple-git-hooks
-  - unrs-resolver

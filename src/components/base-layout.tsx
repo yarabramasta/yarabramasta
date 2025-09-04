@@ -9,7 +9,7 @@ export default function BaseLayout({
 }>) {
   return (
     <>
-      <main className="relative mx-auto min-h-[calc(100dvh_-_56px)] w-full max-w-screen-sm overflow-x-hidden">
+      <main className="relative mx-auto min-h-[calc(100dvh_-_56px)] w-full max-w-screen-lg overflow-x-hidden">
         {children}
       </main>
       <Footer />

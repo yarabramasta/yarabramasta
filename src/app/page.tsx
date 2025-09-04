@@ -22,12 +22,12 @@ export default function Home() {
       }}
     >
       <section className="h-[calc(100dvh_-_56px)] px-6">
-        <div className="grid h-full flex-1 grid-cols-4 grid-rows-12 gap-2 py-8 lg:gap-4">
-          <div className="col-span-4 row-span-4 grid grid-cols-2 gap-2 lg:col-span-2 lg:row-span-8 lg:grid-cols-1 lg:grid-rows-8 lg:gap-4">
-            <div className="border lg:row-span-4"></div>
-            <div className="border lg:row-span-4"></div>
+        <div className="grid h-full flex-1 grid-cols-4 grid-rows-12 gap-2 py-8 md:gap-4">
+          <div className="col-span-4 row-span-4 border md:col-span-2 md:row-span-8"></div>
+          <div className="col-span-4 row-span-4 grid grid-cols-2 gap-2 md:col-span-2 md:row-span-8 md:grid-cols-1 md:grid-rows-8 md:gap-4">
+            <div className="border md:row-span-4"></div>
+            <div className="border md:row-span-4"></div>
           </div>
-          <div className="col-span-4 row-span-4 border lg:col-span-2 lg:row-span-8"></div>
           <div className="col-span-4 row-span-4 border"></div>
         </div>
       </section>

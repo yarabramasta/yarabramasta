@@ -14,7 +14,8 @@ const baseConfig: NextConfig = {
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true
-  }
+  },
+  transpilePackages: ['three']
 }
 
 let config = baseConfig

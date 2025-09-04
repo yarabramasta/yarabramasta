@@ -8,6 +8,8 @@
 @import '@radix-ui/colors/tomato-dark.css';
 @import '@radix-ui/colors/sand.css';
 @import '@radix-ui/colors/sand-dark.css';
+@import '@radix-ui/colors/gray.css';
+@import '@radix-ui/colors/gray-dark.css';
 
 @theme inline {
   --font-sans: var(--font-plus-jakarta-sans);
@@ -99,36 +101,38 @@
 :root {
   --radius: 0.625rem;
 
-  --background: var(--sand-1);
+  --background: var(--gray-1);
   --foreground: var(--sand-12);
 
-  --card: var(--sand-2);
-  --card-foreground: var(--sand-12);
-
-  --popover: var(--sand-2);
-  --popover-foreground: var(--sand-12);
-
-  --primary: var(--sand-7);
-  --primary-foreground: var(--sand-12);
-
-  --secondary: var(--sand-2);
-  --secondary-foreground: var(--sand-12);
-
-  --muted: var(--sand-5);
-  --muted-foreground: var(--sand-10);
-
-  --accent: var(--sand-3);
-  --accent-foreground: var(--sand-12);
+  --ring: var(--gray-5);
+  --input: var(--gray-7);
+  --border: var(--gray-6);
 
   --destructive: var(--tomato-9);
 
-  --border: var(--sand-6);
-  --input: var(--sand-7);
-  --ring: var(--sand-2);
+  --accent-foreground: var(--sand-12);
+  --accent: var(--sand-6);
+
+  --muted-foreground: var(--sand-8);
+  --muted: var(--sand-4);
+
+  --secondary-foreground: var(--sand-12);
+  --secondary: var(--sand-2);
+
+  --primary-foreground: var(--sand-11);
+  --primary: var(--sand-2);
+
+  --popover-foreground: var(--sand-12);
+  --popover: var(--sand-2);
+
+  --card-foreground: var(--sand-12);
+  --card: var(--sand-2);
 }
 
-/* .dark {
-} */
+.dark {
+
+  --background: var(--gray-2);
+}
 
 @layer base {
   * {

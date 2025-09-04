@@ -1,6 +1,5 @@
 import Footer from './footer'
 import GrainyBackground from './grainy-background'
-import Header from './header'
 
 export default function BaseLayout({
   children,
@@ -10,11 +9,8 @@ export default function BaseLayout({
 }>) {
   return (
     <>
-      <Header />
-      <main className="relative min-h-[calc(100dvh_-_56px)] w-full overflow-x-hidden">
-        <div className="mx-auto max-w-screen-sm overflow-x-hidden pt-16">
-          {children}
-        </div>
+      <main className="relative mx-auto min-h-[calc(100dvh_-_56px)] w-full max-w-screen-sm overflow-x-hidden">
+        {children}
       </main>
       <Footer />
       <GrainyBackground />

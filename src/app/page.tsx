@@ -21,14 +21,23 @@ export default function Home() {
         url: 'https://ybrmst.dev'
       }}
     >
-      <section className="h-[calc(100dvh_-_56px)] px-6">
-        <div className="grid h-full flex-1 grid-cols-4 grid-rows-12 gap-2 py-8 md:gap-4">
-          <div className="col-span-4 row-span-4 border md:col-span-2 md:row-span-8"></div>
-          <div className="col-span-4 row-span-4 grid grid-cols-2 gap-2 md:col-span-2 md:row-span-8 md:grid-cols-1 md:grid-rows-8 md:gap-4">
-            <div className="border md:row-span-4"></div>
-            <div className="border md:row-span-4"></div>
+      <section
+        className="grid h-full min-h-[calc(100dvh_-_56px)] grid-cols-4 grid-rows-12 gap-2 px-6 py-8 md:gap-4"
+        id="bento"
+      >
+        <div className="col-span-4 row-span-3 border md:col-span-2 md:row-span-8">
+          3d scene
+        </div>
+        <div className="col-span-4 row-span-6 grid grid-cols-2 gap-2 md:col-span-2 md:row-span-8 md:grid-cols-1 md:grid-rows-8 md:gap-4">
+          <div className="col-span-2 border md:col-span-1 md:row-span-4">
+            about me
           </div>
-          <div className="col-span-4 row-span-4 border"></div>
+          <div className="col-span-2 border md:col-span-1 md:row-span-4">
+            portfolio carousel
+          </div>
+        </div>
+        <div className="col-span-4 row-span-3 border md:row-span-4">
+          marketing, socials, & recent activities
         </div>
       </section>
     </BaseLayout>

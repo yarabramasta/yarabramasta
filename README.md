@@ -1,24 +1,25 @@
-# Hi there, I'm Yara Bramasta! 👋
+**Hi there! 👋 I'm Yara Bramasta (Bram)**  
 
-Software engineer from Malang, Indonesia. I excel at mobile app development and currently want to explore more about native iOS development using Swift.
+💻 **Software Engineer with 4+ years of coding stuff that (hopefully) works**  
+📍 Based in Malang, Indonesia  
+🎯 Building smooth experiences for mobile & web apps with **Flutter & React.js**  
 
-> 🥐 : I never try croissant before if you wonder, it's just my fav emoji lol.
+### 🔥 What I'm Up To
+- 🧑‍💻 Currently developing a **Flutter-based back-office system** for a local veggies merchant 🥕
+- 🌐 Also tinkering with **web projects** when I'm not Fluttering around
+- 🎒 Joining campus tech events like **3CC & NextFrame by Indevpro** (touching grass is important you know 🌿)
 
-## What I'm Up To
+### 🛠️ Tech Stack & Fav Tools
+- Mobile : Flutter, Kotlin, Jetpack Compose
+- Web    : TypeScript, React.js
 
-- 🥳 I already graduated from [Bangkit Academy](https://id.linkedin.com/company/bangkit-academy) and finish all of my courses about native Android development by [Dicoding](https://www.dicoding.com/learningpaths/7)
-- 🔭 Lately, I've been developing my personal website, since I don't have any right now. Don't forget to check it out https://ybrmst.dev
-- 🐾 Also, Currently I've been doing an internship for Frontend Software Engineer role, developing some projects using Laravel on early months and now I'm using fully React.js probably until I finish my internship
+### 🌱 Currently…
+- Learning more about **clean architecture & state management**
+- Trying to balance between **coffee, code & college life**
 
-## Skills
+### 📫 Want to Collab or Just Say Hi?
+Let's connect, I'm always open to discussing projects, tech, or maybe your favorite music playlist 🎧
 
-- **Languages:** JavaScript (TypeScript), Dart, Kotlin
-- **Frameworks & Libraries:** Flutter, Node.js, React.js, Jetpack Compose
-- **Tools & Platforms:** Visual Studio Code, Android Studio, Git, GitHub
-
-## Get in Touch
-
-- 📧 Email: [yarabram111@gmail.com](mailto:yarabram111@gmail.com)
-- 💼 LinkedIn: [Yara Bramasta](https://linkedin.com/in/yara-bramasta)
-
-Looking forward to connecting with you! 😄
+📧 Email: [me@ybrmst.dev]  
+💼 LinkedIn: [https://www.linkedin.com/in/yara-bramasta]  
+🌐 Portfolio: [ybrmst.dev](https://ybrmst.dev)

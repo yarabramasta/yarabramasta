@@ -20,6 +20,6 @@
 ### 📫 Want to Collab or Just Say Hi?
 Let's connect, I'm always open to discussing projects, tech, or maybe your favorite music playlist 🎧
 
-📧 Email: [me@ybrmst.dev]  
-💼 LinkedIn: [https://www.linkedin.com/in/yara-bramasta]  
+📧 Email: me@ybrmst.dev
+💼 LinkedIn: [linkedin.com/yara-bramasta](https://www.linkedin.com/in/yara-bramasta)
 🌐 Portfolio: [ybrmst.dev](https://ybrmst.dev)

@@ -1,14 +1,14 @@
 ## Hi there! 👋 I'm Yara Bramasta (Bram)
 
-💻 **Software engineer** who writes code that (mostly) survives production. Crafting smooth mobile experiences with **Kotlin & Jetpack Compose**, occasionally escaping to the web with **React.js**
+💻 **Software engineer** who writes code that (mostly) survives production. Crafting smooth mobile experiences with **Kotlin & Jetpack Compose**, occasionally escaping to the web with **React.js**.
 
-📍 Based on Malang, Indonesia — where the weather is perfect and the deadlines are not
+📍 Based on Malang, Indonesia — where the weather is perfect and the deadlines are not.
 
 ---
 
 ### 🔥 Recently
 
-Shipping **KopkarPay** — a fintech platform for a university cooperative. Think blockchain-inspired ledger, multi-balance wallets, and real users whose money I'm responsible for. No pressure.
+Developing **KopkarPay** — a fintech platform for a university cooperative. Think blockchain-inspired ledger, multi-balance wallets, and real users whose money I'm responsible for.
 
 ---
 

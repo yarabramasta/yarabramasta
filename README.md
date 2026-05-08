@@ -44,8 +44,10 @@ Developing **KopkarPay** — a fintech platform for a university cooperative. Th
 
 Always down to talk projects, architecture decisions, or what javascript library should be used 🤣
 
-📧 [yarabram111@gmail.com](mailto:yarabram111@gmail.com)
-
-💼 [linkedin/yara-bramasta](https://www.linkedin.com/in/yara-bramasta)
-
-🌐 [ybrmst.dev](https://ybrmst.dev)
+<table>
+  <tr>
+    <td>📧 <a href="mailto:yarabram111@gmail.com" target="blank">yarabram111@gmail.com</a></td>
+    <td>💼 <a href="https://www.linkedin.com/in/yara-bramasta">linkedin/yara-bramasta</a></td>
+    <td>🌐 <a href="https://ybrmst.dev">ybrmst.dev</a></td>
+  </tr>
+</table>

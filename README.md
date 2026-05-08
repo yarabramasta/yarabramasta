@@ -1,27 +1,38 @@
-**Hi there! 👋 I'm Yara Bramasta (Bram)**  
+**Hi there! 👋 I'm Yara Bramasta (Bram)**
+💻 **Software engineer who writes code that (mostly) survives production**
+📍 Malang, Indonesia — where the weather is perfect and the deadlines are not
 
-💻 **Software Engineer with 4+ years of coding stuff that (hopefully) works**  
-📍 Based in Malang, Indonesia  
-🎯 Building smooth experiences for mobile & web apps with **Flutter & React.js**  
+🎯 Crafting smooth mobile experiences with **Kotlin & Jetpack Compose**, occasionally escaping to the web with **React.js**
+
+---
 
 ### 🔥 What I'm Up To
-- 🧑‍💻 Currently developing a **Flutter-based back-office system** for a local veggies merchant 🥕
-- 🌐 Also tinkering with **web projects** when I'm not Fluttering around
-- 🎒 Joining campus tech events like **3CC & NextFrame by Indevpro** (touching grass is important you know 🌿)
 
-### 🛠️ Tech Stack & Fav Tools
-- Mobile : Flutter, Kotlin, Jetpack Compose
-- Web    : TypeScript, React.js
+- 🤖 Currently building **KopkarPay** — a fintech platform for a university cooperative, because apparently I enjoy cryptographically securing people's lunch money
+
+---
+
+### 🛠️ Stack
+
+```
+Mobile  → Kotlin, Jetpack Compose, Flutter
+Backend → TypeScript, Bun
+Web     → TypeScript, React.js, TanStack
+```
+
+---
 
 ### 🌱 Currently…
-- Learning more about **clean architecture & state management**
-- Trying to balance between **coffee, code & college life**
+
+- Going deep on **clean architecture & MVI patterns** for **KopkarPay**
+- Balancing **coffee, commits & daily life** with varying degrees of success ☕
+
+---
 
 ### 📫 Want to Collab or Just Say Hi?
-Let's connect, I'm always open to discussing projects, tech, or maybe your favorite music playlist 🎧
 
-📧 Email: me@ybrmst.dev
+Always down to talk projects, architecture decisions, or your hot takes on state management 🎧
 
-💼 LinkedIn: [linkedin.com/yara-bramasta](https://www.linkedin.com/in/yara-bramasta)
-
-🌐 Portfolio: [ybrmst.dev](https://ybrmst.dev)
+📧 `yarabram111@gmail.com`
+💼 [linkedin.com/in/yara-bramasta](https://www.linkedin.com/in/yara-bramasta)
+🌐 [ybrmst.dev](https://ybrmst.dev)

@@ -26,7 +26,7 @@ Developing **KopkarPay** — a fintech platform for a university cooperative. Th
 ![TanStack](https://img.shields.io/badge/TanStack-FF4154?style=flat&logo=reactquery&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![Bun](https://img.shields.io/badge/Bun-1f1f1f?style=flat&logo=bun&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-257bd6?style=flat&logo=docker&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-257bd6?style=flat&logo=docker&logoColor=white)
 
 ---
 
